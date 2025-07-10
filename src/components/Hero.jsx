@@ -68,12 +68,12 @@ export default function Hero() {
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-row text-sm sm:flex-row gap-4"
             >
-              <Link to="/coaching" className="bg-[#9E5A63] hover:bg-[#B76E79] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+              <Link to="/coaching" className="bg-[#9E5A63] hover:bg-[#B76E79] text-center text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                 Start Your Journey
               </Link>
-              <Link to="/about" className="border border-[#9E5A63] text-[#5A5A5A] hover:bg-[#F7E8E8] px-6 py-3 rounded-lg font-medium transition-all duration-300">
+              <Link to="/about" className="border border-[#9E5A63] text-center text-[#5A5A5A] hover:bg-[#F7E8E8] px-6 py-3 rounded-lg font-medium transition-all duration-300">
                 Learn More
               </Link>
             </motion.div>
