@@ -36,12 +36,12 @@ export default function CareerCoaching() {
             <p className="text-l md:text-2xl text-white max-w-3xl mx-auto mb-8">
               Find clarity, direction, and confidence in your professional journey
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-4 text-xs">
               <Link
                 to="/book"
-                className="px-8 py-3 bg-white hover:bg-gray-100 text-sm text-[#B76E79] rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                className="px-8 py-3 bg-white hover:bg-gray-100 text-xsm text-[#B76E79] rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Book a Session
+                Let's Talk
               </Link>
               <Link
                 to="/coaching"

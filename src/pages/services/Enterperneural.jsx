@@ -41,13 +41,13 @@ export default function EntrepreneurialCoaching() {
                 to="/book"
                 className="px-8 py-3 bg-white hover:bg-gray-100 text-[#B76E79] text-sm rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Talk to Us
+                Let's Talk
               </Link>
               <Link
                 to="/coaching"
                 className="px-8 py-3 border border-white text-white hover:bg-white hover:text-[#B76E79] rounded-lg font-medium transition-all duration-300"
               >
-                Explores Services
+                View Services
               </Link>
             </div>
           </motion.div>

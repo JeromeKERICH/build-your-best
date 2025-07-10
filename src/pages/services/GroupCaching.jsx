@@ -40,7 +40,7 @@ export default function GroupCoaching() {
             <p className="text-l md:text-2xl text-white max-w-3xl mx-auto mb-8">
               Transform together in a supportive community of like-minded women
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-4 text-xsm">
               <Link
                 to="/waitlist"
                 className="px-8 py-3 bg-white hover:bg-gray-100 text-[#B76E79] text-sm rounded-lg font-medium shadow-lg hover:shadow-xl transition-all duration-300"
