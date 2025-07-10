@@ -50,17 +50,17 @@ export default function AboutHero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-4 text-xs"
             >
               <a 
                 href="#journey" 
-                className="px-6 py-3 bg-[#B76E79] hover:bg-[#9E5A63] text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg"
+                className="px-6 py-3 bg-[#B76E79] hover:bg-[#9E5A63] text-white text-sm rounded-lg font-medium transition-all duration-300 hover:shadow-lg"
               >
                 Talk to Me
               </a>
               <a 
                 href="/discovery" 
-                className="px-6 py-3 border-2 border-[#B76E79] text-[#B76E79] hover:bg-[#F7E8E8] rounded-lg font-medium transition-all duration-300"
+                className="px-6 py-3 border-2 border-[#B76E79] text-[#B76E79] text-sm hover:bg-[#F7E8E8] rounded-lg font-medium transition-all duration-300"
               >
                 Rediscover Yourself
               </a>
