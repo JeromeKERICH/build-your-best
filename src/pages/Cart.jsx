@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function CheckoutPage(
     
-    { selectedProduct }) {
+    { selectedProduct, selectedPackage }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

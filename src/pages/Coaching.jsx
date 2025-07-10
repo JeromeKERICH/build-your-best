@@ -1,11 +1,16 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import CheckoutPage from './Cart';
 
 export default function CoachingPackages() {
     useEffect(() => {
         window.scrollTo(0, 0);
 }, []);
+
+const [selectedPackage, setSelectedPackage] = useState(null); // Add this state
+  const [showCheckout, setShowCheckout] = useState(false);
+
   const packages = [
     {
       name: "Clarity Boost",
@@ -18,7 +23,10 @@ export default function CoachingPackages() {
         "Perfect for quick breakthroughs"
       ],
       popular: false,
-      link: "/book/clarity-boost"
+      link: "/book/clarity-boost",
+      quantity: 1, // Add this
+      type: "coaching"
+
     },
     {
         name: "Transformation Journey",
@@ -32,7 +40,8 @@ export default function CoachingPackages() {
           "Priority email access"
         ],
         popular: true,
-        link: "/book/transformation-journey"
+        quantity: 1, // Add this
+        type: "coaching"
       },
     {
       name: "Breakthrough Bundle",
@@ -45,7 +54,9 @@ export default function CoachingPackages() {
         "Accountability structure"
       ],
       popular: false,
-      link: "/book/breakthrough-bundle"
+      link: "/book/breakthrough-bundle",
+      quantity: 1, // Add this
+        type: "coaching"
     },
     
     {
@@ -60,7 +71,9 @@ export default function CoachingPackages() {
         "LinkedIn profile review"
       ],
       popular: false,
-      link: "/book/career-clarity"
+      link: "/book/career-clarity",
+      quantity: 1, // Add this
+        type: "coaching"
     },
     {
       name: "Group Coaching Circle",
@@ -74,9 +87,27 @@ export default function CoachingPackages() {
         "$90 for 3-session package"
       ],
       comingSoon: true,
-      link: "/waitlist/group-coaching"
+      link: "/waitlist/group-coaching",
+      quantity: 1, // Add this
+        type: "coaching"
     }
   ];
+
+
+  const handleBookNow = (pkg) => {
+    if (!pkg.comingSoon) {
+      setSelectedPackage({
+        ...pkg,
+        // Convert price to number for checkout
+        price: parseFloat(pkg.price.replace('$', '').replace('/session', ''))
+      });
+      setShowCheckout(true);
+    }
+  };
+
+  if (showCheckout && selectedPackage) {
+    return <CheckoutPage selectedProduct={selectedPackage} />;
+  }
 
   return (
     <div className="bg-white">
@@ -145,8 +176,8 @@ export default function CoachingPackages() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    to={pkg.link}
+                  <button
+                    onClick={() => handleBookNow(pkg)}
                     className={`mt-auto w-full text-center px-6 py-3 rounded-lg font-medium transition-colors duration-300 ${
                       pkg.comingSoon 
                         ? 'bg-gray-200 text-gray-500 cursor-not-allowed' 
@@ -154,7 +185,7 @@ export default function CoachingPackages() {
                     }`}
                   >
                     {pkg.comingSoon ? 'Join Waitlist' : 'Book Now'}
-                  </Link>
+                  </button>
                 </div>
               </motion.div>
             ))}
