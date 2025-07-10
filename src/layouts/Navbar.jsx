@@ -19,15 +19,22 @@ export default function Navbar() {
     <nav className="bg-white shadow-sm sticky top-0 z-50 border-b border-[#F7D9D9]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <Link 
-              to="/" 
-              className="text-2xl font-bold text-[#B76E79] hover:text-[#9E5A63] transition-colors duration-200"
-            >
-              BYBS
-            </Link>
+        <div className="flex items-center">
+          
+          <div className="flex flex-row items-center">
+            
+            <div className="text-3xl font-bold tracking-tighter text-gray-900">BYBS</div>
+            
+            
+            <div className={`h-8 w-px bg-gray-400 ${window.innerWidth < 640 ? 'mx-2' : 'mx-4'}`}></div>
+            
+            
+            <div className="text-xs lowercase tracking-[0.3em] text-left text-gray-600 whitespace-nowrap">
+              <span>Build Your</span> <br/>
+              <span className={window.innerWidth < 640 ? 'ml-0.5' : 'ml-1'}>Best Self</span>
+            </div>
           </div>
+        </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">

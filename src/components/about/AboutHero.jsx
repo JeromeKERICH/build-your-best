@@ -56,13 +56,13 @@ export default function AboutHero() {
                 href="#journey" 
                 className="px-6 py-3 bg-[#B76E79] hover:bg-[#9E5A63] text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg"
               >
-                My Story
+                Talk to Me
               </a>
               <a 
-                href="/coaching" 
+                href="/discovery" 
                 className="px-6 py-3 border-2 border-[#B76E79] text-[#B76E79] hover:bg-[#F7E8E8] rounded-lg font-medium transition-all duration-300"
               >
-                My Approach
+                Rediscover Yourself
               </a>
             </motion.div>
           </motion.div>
@@ -76,7 +76,7 @@ export default function AboutHero() {
           >
             <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl border-4 border-white">
               <img
-                src="/assets/brenda2.png"
+                src="/assets/bren.jpg"
                 alt="Brenda Viola - Founder of Build Your Best Self"
                 className="w-full h-full object-cover object-center"
                 loading="eager"

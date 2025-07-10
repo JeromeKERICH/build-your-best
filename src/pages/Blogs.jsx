@@ -12,8 +12,8 @@ export default function BlogPage() {
   const blogPosts = [
     {
       id: 1,
-      title: "5 Signs You're Ready for a Career Change",
-      excerpt: "How to recognize when it's time to pivot professionally",
+      title: "Feeling Stuck? 5 Gentle Questions That Will Help You Move Forward",
+      excerpt: "Self-reflection, clarity, emotional growth, personal development, healing",
       category: "career",
       date: "May 15, 2023",
       readTime: "6 min read",
@@ -21,7 +21,7 @@ export default function BlogPage() {
     },
     {
       id: 2,
-      title: "From Self-Doubt to Self-Trust",
+      title: "Rebuilding Your Confidence",
       excerpt: "Practical exercises to rebuild your confidence muscle",
       category: "confidence",
       date: "April 28, 2023",
@@ -31,16 +31,16 @@ export default function BlogPage() {
     },
     {
       id: 3,
-      title: "Designing Your Ideal Morning Routine",
+      title: "Career Clarity: Finding Your Next Right Step",
       excerpt: "Start your day with intention and clarity",
       category: "productivity",
       date: "April 10, 2023",
       readTime: "5 min read",
-      image: "/assets/b1.jpg"
+      image: "/assets/b2.jpg"
     },
     {
       id: 4,
-      title: "The Art of Saying No Without Guilt",
+      title: "7 Signs You’re Ready for a Mindset Reset",
       excerpt: "Setting boundaries that honor your energy",
       category: "mindset",
       date: "March 22, 2023",
@@ -49,12 +49,12 @@ export default function BlogPage() {
     },
     {
       id: 5,
-      title: "Career Clarity: Finding Your Next Right Step",
-      excerpt: "A framework for decision-making when you feel stuck",
+      title: "Intentional Living",
+      excerpt: "How to Build a Life That Feels Like You",
       category: "career",
       date: "March 15, 2023",
       readTime: "9 min read",
-      image: "/assets/b2.jpg"
+      image: "/assets/b1.jpg"
     },
     {
       id: 6,

@@ -1,84 +1,187 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
+import CheckoutPage from './Cart';
 export default function ShopPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-}, []);
+  }, []);
+
+  
+  
+  
+
   const [activeCategory, setActiveCategory] = useState('all');
   const [sortOption, setSortOption] = useState('newest');
+  const [selectedProduct, setSelectedProduct] = useState(null); // Add this state
+  const [showCheckout, setShowCheckout] = useState(false); 
 
-  // Sample product data
+  // Product data organized by your categories
   const products = [
+    // Career Clarity & Purpose
     {
       id: 1,
-      name: "Clarity & Confidence Workbook",
-      category: "workbooks",
-      focus: ["self-discovery", "confidence"],
-      price: 29,
-      isNew: true,
+      name: "Career Clarity Roadmap",
+      category: "career",
+      focus: ["career", "purpose"],
+      price: 15,
       isBestseller: true,
-      image: "/products/workbook-1.jpg",
-      description: "60-page guide to uncovering your core values and building unshakable confidence"
+      image: "/products/career-roadmap.jpg",
+      description: "Guided workbook for professionals ready for a purposeful career shift"
     },
     {
       id: 2,
-      name: "Intentional Living E-book",
-      category: "ebooks",
-      focus: ["mindset", "productivity"],
-      price: 19,
-      isNew: false,
-      isBestseller: true,
-      image: "/products/ebook-1.jpg",
-      description: "Learn to design days that align with your true priorities"
+      name: "Vision Planning Workbook",
+      category: "career",
+      focus: ["planning", "clarity"],
+      price: 10,
+      isBestseller: false,
+      image: "/products/vision-workbook.jpg",
+      description: "Set aligned goals and create a life rooted in clarity and direction"
     },
     {
       id: 3,
-      name: "90-Day Transformation Journal",
-      category: "journals",
-      focus: ["habits", "accountability"],
-      price: 25,
-      isNew: true,
-      isBestseller: false,
-      image: "/products/journal-1.jpg",
-      description: "Daily prompts and tracking for sustainable change"
+      name: "Purpose Mapping Workbook",
+      category: "career",
+      focus: ["purpose", "direction"],
+      price: 11,
+      isBestseller: true,
+      image: "/products/purpose-mapping.jpg",
+      description: "Clarify your passions and explore aligned career paths"
     },
+    
+    // Mindset & Motivation
     {
       id: 4,
-      name: "Career Pivot Playbook",
-      category: "workbooks",
-      focus: ["career", "confidence"],
-      price: 35,
-      isNew: false,
-      isBestseller: false,
-      image: "/products/workbook-2.jpg",
-      description: "Step-by-step guide to reinventing your professional path"
+      name: "30-Day Mindset Reset Journal",
+      category: "mindset",
+      focus: ["habits", "resilience"],
+      price: 12,
+      isBestseller: true,
+      image: "/products/mindset-journal.jpg",
+      description: "Build habits that strengthen your emotional resilience"
     },
     {
       id: 5,
-      name: "Boundaries Blueprint",
-      category: "ebooks",
-      focus: ["relationships", "self-care"],
-      price: 22,
-      isNew: false,
-      isBestseller: true,
-      image: "/products/ebook-2.jpg",
-      description: "Learn to set healthy limits without guilt"
+      name: "Reframe & Rise Workbook",
+      category: "mindset",
+      focus: ["mindset", "growth"],
+      price: 10,
+      isBestseller: false,
+      image: "/products/reframe-workbook.jpg",
+      description: "Turn negative thoughts into empowering beliefs"
     },
+    
+    // Self-Worth & Confidence
     {
       id: 6,
-      name: "Mindset Reset Challenge",
-      category: "courses",
-      focus: ["mindset", "accountability"],
-      price: 49,
-      isNew: true,
+      name: "Confidence Builder Workbook",
+      category: "confidence",
+      focus: ["self-worth", "growth"],
+      price: 11,
+      isBestseller: true,
+      image: "/products/confidence-workbook.jpg",
+      description: "Unpack limiting beliefs and write a new personal narrative"
+    },
+    {
+      id: 7,
+      name: "The Worthiness Workbook",
+      category: "confidence",
+      focus: ["self-worth", "healing"],
+      price: 10,
       isBestseller: false,
-      image: "/products/course-1.jpg",
-      description: "14-day program to transform limiting beliefs (Coming Soon)",
+      image: "/products/worthiness-workbook.jpg",
+      description: "Reconnect with your value and rewrite your inner script"
+    },
+    
+    // Productivity & Planning
+    {
+      id: 8,
+      name: "Gentle Productivity Planner",
+      category: "productivity",
+      focus: ["planning", "balance"],
+      price: 15,
+      isBestseller: true,
+      image: "/products/productivity-planner.jpg",
+      description: "Weekly layouts with emotional check-ins and rest prompts"
+    },
+    {
+      id: 9,
+      name: "Time Peace Planner",
+      category: "productivity",
+      focus: ["time", "balance"],
+      price: 9,
+      isBestseller: false,
+      image: "/products/time-planner.jpg",
+      description: "Balance structure and softness for sustainable productivity"
+    },
+    
+    // Life Design & Intentional Living
+    {
+      id: 10,
+      name: "Intentional Living Workbook",
+      category: "lifestyle",
+      focus: ["values", "purpose"],
+      price: 15,
+      isBestseller: true,
+      image: "/products/intentional-living.jpg",
+      description: "Define your values and create life rhythms that reflect who you are"
+    },
+    {
+      id: 11,
+      name: "The Life Values Blueprint",
+      category: "lifestyle",
+      focus: ["values", "clarity"],
+      price: 11,
+      isBestseller: false,
+      image: "/products/values-blueprint.jpg",
+      description: "Discover and prioritize your core life values"
+    },
+    
+    // Free Resources
+    {
+      id: 12,
+      name: "5-Day Self-Discovery Challenge",
+      category: "free",
+      focus: ["reflection", "clarity"],
+      price: 0,
+      isBestseller: true,
+      image: "/products/discovery-challenge.jpg",
+      description: "Powerful reflection journey to reconnect with your inner compass"
+    },
+    {
+      id: 13,
+      name: "Self-Discovery Guide",
+      category: "free",
+      focus: ["beginnings", "intention"],
+      price: 0,
+      isBestseller: false,
+      image: "/products/discovery-guide.jpg",
+      description: "Structured self-reflection for intentional beginnings"
+    },
+    
+    // Coming Soon
+    {
+      id: 14,
+      name: "Build Your Best Self: Foundations Course",
+      category: "courses",
+      focus: ["purpose", "clarity"],
+      price: 97,
+      isBestseller: false,
+      image: "/products/foundations-course.jpg",
+      description: "Comprehensive modules on purpose, vision, and clarity",
       comingSoon: true
     }
   ];
+
+
+  const handleAddToCart = (product) => {
+    setSelectedProduct(product);
+    setShowCheckout(true);
+  };
+
+  if (showCheckout && selectedProduct) {
+    return <CheckoutPage selectedProduct={selectedProduct} />;
+  }
 
   // Filter and sort products
   const filteredProducts = products
@@ -86,7 +189,7 @@ export default function ShopPage() {
     .sort((a, b) => {
       switch(sortOption) {
         case 'newest': 
-          return (a.isNew === b.isNew) ? 0 : a.isNew ? -1 : 1;
+          return b.id - a.id; // Assuming higher IDs are newer
         case 'bestsellers':
           return (a.isBestseller === b.isBestseller) ? 0 : a.isBestseller ? -1 : 1;
         case 'price-low':
@@ -104,10 +207,10 @@ export default function ShopPage() {
       <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#F7E8E8] to-[#F5EFE7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-[#3A3A3A] mb-6">
-            Empower Your Journey Today
+            Build Your Best Self
           </h1>
           <p className="text-xl text-[#5A5A5A] max-w-3xl mx-auto mb-8">
-            Self-paced tools for clarity, confidence, and intentional growth
+            Digital tools for intentional growth in career, mindset, and life design
           </p>
           <Link
             to="/discovery-quiz"
@@ -129,13 +232,15 @@ export default function ShopPage() {
               >
                 All Products
               </button>
-              {['ebooks', 'workbooks', 'journals', 'courses'].map(category => (
+              {['career', 'mindset', 'confidence', 'productivity', 'lifestyle', 'free', 'courses'].map(category => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm font-medium capitalize ${activeCategory === category ? 'bg-[#B76E79] text-white' : 'bg-[#F5EFE7] text-[#3A3A3A] hover:bg-[#F7D9D9]'}`}
                 >
-                  {category === 'courses' ? 'Courses & Challenges' : category}
+                  {category === 'free' ? 'Free Resources' : 
+                   category === 'courses' ? 'Courses' : 
+                   category.replace('-', ' ')}
                 </button>
               ))}
             </div>
@@ -175,6 +280,11 @@ export default function ShopPage() {
                         Coming Soon
                       </div>
                     )}
+                    {product.price === 0 && (
+                      <div className="absolute top-4 left-4 bg-[#B76E79] text-white px-3 py-1 text-xs font-medium rounded-full">
+                        Free
+                      </div>
+                    )}
                     <img 
                       src={product.image} 
                       alt={product.name}
@@ -184,7 +294,9 @@ export default function ShopPage() {
                   <div className="p-6">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="text-xl font-bold text-[#3A3A3A]">{product.name}</h3>
-                      <span className="text-[#B76E79] font-medium">${product.price}</span>
+                      <span className="text-[#B76E79] font-medium">
+                        {product.price === 0 ? 'FREE' : `$${product.price}`}
+                      </span>
                     </div>
                     <p className="text-[#5A5A5A] mb-4">{product.description}</p>
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -194,12 +306,16 @@ export default function ShopPage() {
                         </span>
                       ))}
                     </div>
-                    <Link
-                      to={product.comingSoon ? '/waitlist' : `/product/${product.id}`}
-                      className={`block w-full text-center px-4 py-3 rounded-lg font-medium ${product.comingSoon ? 'bg-gray-200 text-gray-500' : 'bg-[#B76E79] hover:bg-[#9E5A63] text-white'}`}
+                    <button
+                      onClick={() => !product.comingSoon && handleAddToCart(product)}
+                      className={`block w-full text-center px-4 py-3 rounded-lg font-medium ${
+                        product.comingSoon 
+                          ? 'bg-gray-200 text-gray-500 cursor-not-allowed' 
+                          : 'bg-[#B76E79] hover:bg-[#9E5A63] text-white cursor-pointer'
+                      }`}
                     >
-                      {product.comingSoon ? 'Notify Me' : 'Add to Cart'}
-                    </Link>
+                      {product.comingSoon ? 'Notify Me' : 'Buy Now'}
+                    </button>
                   </div>
                 </div>
               ))}
@@ -209,9 +325,9 @@ export default function ShopPage() {
       </section>
 
       {/* Checkout Features */}
-      <section className="py-5 md:py-10 bg-[#F5EFE7]">
+      <section className="py-16 bg-[#F5EFE7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-[#3A3A3A] mb-12 text-center">Easy, Secure Checkout</h2>
+          <h2 className="text-3xl font-bold text-[#3A3A3A] mb-12 text-center">Easy, Secure Checkout</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -253,16 +369,16 @@ export default function ShopPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-5 md:py-10 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-gradient-to-r from-[#F7E8E8] to-[#F5EFE7] rounded-2xl p-8 md:p-12 shadow-sm">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#3A3A3A] mb-6">Not Sure Where to Start?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#3A3A3A] mb-6">Find Your Perfect Starting Point</h2>
             <p className="text-xl text-[#5A5A5A] mb-8">
-              Take our 2-minute quiz to discover which resources best match your goals.
+              Take our 2-minute quiz to discover which resources best match your goals and needs.
             </p>
             <Link
               to="/discovery-quiz"
-              className="inline-block px-8 py-4 bg-[#B76E79] hover:bg-[#9E5A63] text-white rounded-lg font-medium text-sm shadow-lg hover:shadow-xl transition-all duration-300"
+              className="inline-block px-8 py-4 bg-[#B76E79] hover:bg-[#9E5A63] text-white rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             >
               Take the Self-Discovery Quiz
             </Link>

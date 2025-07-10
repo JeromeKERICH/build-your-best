@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
             <div className="pt-2">
               {/* Replace with your logo or signature */}
-              <span className="text-2xl font-bold text-[#B76E79]">BuildYourBest</span>
+              <span className="text-2xl font-bold text-[#B76E79]">Build Your Best Self</span>
             </div>
             <p className="italic text-[#B89CA5]">
               "Build your best, from the inside out."
@@ -44,7 +44,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-[#F7D9D9]">Resources</h3>
             <ul className="space-y-2">
-              {['FAQs', 'Free Downloads', 'Join the Community', 'Privacy Policy', 'Terms & Conditions'].map((item) => (
+              {['FAQs', 'Community', 'Privacy', 'Terms'].map((item) => (
                 <li key={item}>
                   <a
                     href={`/${item.toLowerCase().replace(' ', '-').replace('&', 'and')}`}
@@ -78,24 +78,14 @@ export default function Footer() {
             </div>
             <div className="pt-2">
               <div className="flex space-x-4">
-                <a href="#" className="text-[#F5EFE7] hover:text-[#B76E79] transition-colors duration-200">
+                <a href="https://www.instagram.com/buildyourbestself_25?igsh=ZmFjcTlrMDdtc2Fk" className="text-[#F5EFE7] hover:text-[#B76E79] transition-colors duration-200">
                   <FaInstagram size={20} />
                 </a>
-                <a href="#" className="text-[#F5EFE7] hover:text-[#B76E79] transition-colors duration-200">
+                <a href="https://www.facebook.com/share/15rD2aArYn/?mibextid=wwXIfr" className="text-[#F5EFE7] hover:text-[#B76E79] transition-colors duration-200">
                   <FaFacebook size={20} />
                 </a>
-                <a href="#" className="text-[#F5EFE7] hover:text-[#B76E79] transition-colors duration-200">
-                  <FaLinkedin size={20} />
-                </a>
-                <a href="#" className="text-[#F5EFE7] hover:text-[#B76E79] transition-colors duration-200">
-                  <FaYoutube size={20} />
-                </a>
-                <a href="#" className="text-[#F5EFE7] hover:text-[#B76E79] transition-colors duration-200">
-                  <FaWhatsapp size={20} />
-                </a>
-                <a href="#" className="text-[#F5EFE7] hover:text-[#B76E79] transition-colors duration-200">
-                  <HiOutlineMail size={20} />
-                </a>
+                
+                
               </div>
             </div>
           </div>

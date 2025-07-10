@@ -39,7 +39,7 @@ export default function AboutMission() {
             
             <div className="border-l-4 border-[#B76E79] pl-6 my-8">
               <p className="italic text-[#5A5A5A]">
-                "I hit my breaking point when I realized I couldn't remember the last time I felt like myself—not a mom, not a wife, not an employee... just me."
+                "I hit my breaking point when I realized I couldn't remember the last time I felt like myself not a mom, not a wife, not an employee... just me."
               </p>
             </div>
             
@@ -48,7 +48,7 @@ export default function AboutMission() {
             </p>
             
             <p className="text-xl font-medium">
-              Build Your Best Self was born from this journey—a space where women can shed expectations and rediscover their power.
+              Build Your Best Self was born from this journey, a space where women can shed expectations and rediscover their power.
             </p>
           </motion.div>
         </div>

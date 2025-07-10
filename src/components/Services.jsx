@@ -8,35 +8,35 @@ export default function Services() {
       description: "For women ready to break free from self-doubt and build self-trust.",
       details: "Reconnect with your identity, rewrite limiting beliefs, and own your story.",
       image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/coaching/personal"
+      link: "/personal"
     },
     {
       title: "Career Coaching",
       description: "For professionals seeking clarity, growth, or transition.",
       details: "Get unstuck, align your path with your strengths, and pursue meaningful work.",
       image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/coaching/career"
+      link: "/careercoaching"
     },
     {
       title: "Entrepreneurial Coaching",
       description: "For purpose-driven women ready to launch or grow their ventures.",
       details: "Gain strategy, mindset support, and structure to build something that lasts.",
       image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/coaching/entrepreneur"
+      link: "/enterpreneur"
     },
     {
       title: "One-on-One Coaching",
       description: "Personalized sessions designed around your unique goals and pace.",
       details: "Private coaching with Brenda for focused and empowering transformation.",
       image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/coaching/one-on-one"
+      link: "/one-one"
     },
     {
       title: "Group Coaching (Coming Soon!)",
       description: "For those who grow better in community.",
       details: "Live sessions, accountability, and shared breakthroughs in a supportive space.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/coaching/group"
+      link: "/group-coaching"
     }
   ];
 

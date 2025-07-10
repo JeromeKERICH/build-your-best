@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
@@ -69,12 +70,12 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button className="bg-[#9E5A63] hover:bg-[#B76E79] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+              <Link to="/coaching" className="bg-[#9E5A63] hover:bg-[#B76E79] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                 Start Your Journey
-              </button>
-              <button className="border border-[#9E5A63] text-[#5A5A5A] hover:bg-[#F7E8E8] px-6 py-3 rounded-lg font-medium transition-all duration-300">
+              </Link>
+              <Link to="/about" className="border border-[#9E5A63] text-[#5A5A5A] hover:bg-[#F7E8E8] px-6 py-3 rounded-lg font-medium transition-all duration-300">
                 Learn More
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
 

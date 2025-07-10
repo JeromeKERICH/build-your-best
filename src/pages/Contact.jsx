@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
-import { FaCalendarAlt, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaCalendarAlt, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 
 export default function ContactPage() {
     useEffect(()=> {
@@ -157,7 +157,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-bold text-[#3A3A3A] mb-6">Connect on Social</h2>
                 <div className="flex space-x-4">
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/buildyourbestself_25?igsh=ZmFjcTlrMDdtc2Fk"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-[#F5EFE7] hover:bg-[#F7D9D9] text-[#B76E79] rounded-full transition-colors duration-300"
@@ -165,7 +165,7 @@ export default function ContactPage() {
                     <FaInstagram className="text-2xl" />
                   </a>
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/share/15rD2aArYn/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-[#F5EFE7] hover:bg-[#F7D9D9] text-[#B76E79] rounded-full transition-colors duration-300"
@@ -173,21 +173,14 @@ export default function ContactPage() {
                     <FaFacebook className="text-2xl" />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://wa.me/211921650576"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 bg-[#F5EFE7] hover:bg-[#F7D9D9] text-[#B76E79] rounded-full transition-colors duration-300"
                   >
-                    <FaLinkedin className="text-2xl" />
+                    <FaWhatsapp className="text-2xl" />
                   </a>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-[#F5EFE7] hover:bg-[#F7D9D9] text-[#B76E79] rounded-full transition-colors duration-300"
-                  >
-                    <FaTwitter className="text-2xl" />
-                  </a>
+                  
                 </div>
               </motion.div>
             </div>
