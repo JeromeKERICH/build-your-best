@@ -15,12 +15,13 @@ const blogPosts = [
         First, I want you to know this: feeling stuck doesn’t mean you’re failing. It doesn’t mean you’re weak, lazy, or broken. It means something within you is ready to shift—and your current strategies or environment may no longer be in alignment with where you're meant to go.
         In these moments, you don’t need to force clarity or rush your next move.
         You need to pause. Breathe. And ask better questions—the kind that lead you back to yourself.
-        Here are five gentle, growth-centered questions to help you explore your current season and start moving forward—with compassion, not pressure.
+        Here are five gentle, growth-centered questions to help you explore your current season and start moving forward—with compassion, not pressure.</p>
+
         <br/>
         
 <h2>What am I feeling, and what might that feeling be trying to tell me?</h2>
-We often try to think our way out of emotional discomfort. But feelings are messengers. They don’t come to punish us—they come to point us toward something deeper.
-Instead of resisting or numbing out, ask yourself:
+<p>We often try to think our way out of emotional discomfort. But feelings are messengers. They don’t come to punish us—they come to point us toward something deeper.
+Instead of resisting or numbing out, ask yourself:</p>
 <ul>
     <li>What exactly am I feeling right now?</li>
     <li>Is it frustration, fear, sadness, confusion, emptiness?</li>
@@ -95,14 +96,15 @@ It shifts you from “What’s wrong with me?” to “What can I offer myself w
 
 <h3>Key Takeaway: </h3>
 
+<p>
 You’re not stuck. You’re simply being invited inward.
 Sometimes, growth doesn’t look like a new job, a new habit, or a new title.
 Sometimes, it looks like sitting with yourself—with tenderness—until your inner voice gets louder than the noise around you.
-So if you feel stuck today, start by asking these questions. 
+So if you feel stuck today, start by asking these questions.  </p>
 <br/>
-Let them guide you back to yourself. You’ll be surprised by how much wisdom is already within you.
+<p>Let them guide you back to yourself. You’ll be surprised by how much wisdom is already within you.</p>
 </br>
-Try This: 
+<h3>Try This: </h3>
 
 <ul>
 <li>Gentle Self-Coaching Exercise</li>
@@ -110,7 +112,8 @@ Try This:
 <li>Journal your thoughts without editing, fixing, or judging. Just write.</li>
 </ul>
 </p>
-Let this be your first step forward.
+
+<p> Let this be your first step forward. </p>
 
         <h3>Try This: Gentle Self-Coaching Exercise</h3>
         <p>Choose one question from this post. Set a timer for 10 minutes. Journal your thoughts...</p>

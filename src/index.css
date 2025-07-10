@@ -9,7 +9,7 @@
 }
 
 .blog-content p {
-  font-size: 0.8rem; 
+font-size: 1rem; 
   line-height: 1.75rem;
   margin-bottom: 1.25rem;
 }
@@ -20,8 +20,9 @@
   margin-bottom: 1.25rem;
 }
 
-.blog-content li {
-  margin-bottom: 0.4rem;
+.blog-content ul li {
+font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .blog-content a {
