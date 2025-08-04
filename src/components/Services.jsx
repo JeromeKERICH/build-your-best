@@ -41,87 +41,67 @@ export default function Services() {
   ];
 
   return (
-    <section className="relative bg-[#F5EFE7] py-5 md:py-10 overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-[#B76E79] mix-blend-multiply filter blur-xl opacity-20"></div>
-        <div className="absolute bottom-0 right-0 w-64 h-64 rounded-full bg-[#B89CA5] mix-blend-multiply filter blur-xl opacity-20"></div>
-      </div>
+    <section className="relative bg-[#F8F9FF] py-5 md:py-15 overflow-hidden">
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         {/* Header */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#3A3A3A] mb-4">
-            Coaching Services
+          <div className="inline-block px-5 py-2 bg-[#00337C]/10 rounded-full mb-6 border border-[#00337C]/20">
+            <span className="text-[#00337C] font-semibold text-sm uppercase tracking-wider">
+              Transformational Services
+            </span>
+          </div>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00337C] to-[#B76E79]">
+              Coaching Programs
+            </span>
           </h2>
-          <div className="w-24 h-1 bg-[#B76E79] mx-auto mb-6"></div>
-          <p className="text-xl text-[#5A5A5A] max-w-3xl mx-auto">
-            Personalized support to help you grow intentionally and show up as your best self.
-          </p>
+          <div className="w-32 h-1 bg-gradient-to-r from-[#00337C] to-[#B76E79] mx-auto"></div>
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ y: -10 }}
+              className="group relative bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="h-60 overflow-hidden">
                 <img 
                   src={service.image} 
                   alt={service.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+               
               </div>
-              <div className="p-6">
-                <h4 className="text-xl font-bold text-[#3A3A3A] mb-2">{service.title}</h4>
-                <p className="text-[#5A5A5A] mb-3">{service.description}</p>
-                <p className="text-[#B76E79] font-medium mb-4">{service.details}</p>
+              <div className="p-8">
+                <h4 className="text-xl md:text-xl font-bold text-gray-900 mb-3">{service.title}</h4>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <p className="text-[#B76E79] font-medium mb-6">{service.details}</p>
                 <Link 
                   to={service.link} 
-                  className="inline-block text-[#B76E79] font-medium hover:text-[#9E5A63] transition-colors duration-200"
+                  className="inline-flex items-center text-[#00337C] font-semibold  transition-colors duration-200"
                 >
-                  Learn more →
+                  <span>Discover more</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold text-[#3A3A3A] mb-6">Ready to Begin Your Journey?</h3>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link 
-              to="/book" 
-              className="bg-[#B76E79] hover:bg-[#9E5A63] text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200"
-            >
-              Book a Session
-            </Link>
-            <Link 
-              to="/contact" 
-              className="bg-white border border-[#B76E79] text-[#B76E79] hover:bg-[#F7E8E8] px-6 py-3 rounded-lg font-medium transition-colors duration-200"
-            >
-              Have Questions?
-            </Link>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

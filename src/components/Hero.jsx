@@ -10,95 +10,109 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center">
-      {/* Refined Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#F7E8E8] via-[#F8F1E7] to-[#E8D1D8] z-0"></div>
+    <section className="relative overflow-hidden min-h-screen flex items-center bg-[#0A0F24]">
+      {/* ELECTRIC Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0A0F24] via-[#00337C] to-[#C66D02] opacity-95 z-0"></div>
       
-      {/* More subtle animated elements */}
+      {/* PULSING Animated elements */}
       {loaded && (
         <>
           <motion.div
-            initial={{ x: -100, y: -100, opacity: 0 }}
-            animate={{ x: 0, y: 0, opacity: 0.2 }}
-            transition={{ duration: 2, delay: 0.2 }}
-            className="absolute top-1/4 left-1/4 w-56 h-56 rounded-full bg-[#D4A5AD] mix-blend-overlay filter blur-3xl opacity-20"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.4 }}
+            transition={{ duration: 2, delay: 0.2, repeat: Infinity, repeatType: "reverse" }}
+            className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-[#00337C] mix-blend-screen filter blur-[100px]"
           ></motion.div>
           <motion.div
-            initial={{ x: 100, y: 100, opacity: 0 }}
-            animate={{ x: 0, y: 0, opacity: 0.15 }}
-            transition={{ duration: 2, delay: 0.4 }}
-            className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-[#5E4E52] mix-blend-overlay filter blur-3xl opacity-15"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1.2, opacity: 0.3 }}
+            transition={{ duration: 3, delay: 0.4, repeat: Infinity, repeatType: "reverse" }}
+            className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-[#C66D02] mix-blend-screen filter blur-[120px]"
           ></motion.div>
         </>
       )}
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content - Improved hierarchy */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Text Content - HIGH IMPACT */}
           <motion.div 
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "backOut" }}
             className="order-2 lg:order-1"
           >
-            <div className="mb-6">
+            <div className="mb-10">
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
-                className="text-sm font-semibold text-[#B76E79] uppercase tracking-wider mb-4"
+                className="inline-block px-4 py-2 bg-[#C66D02]/20 rounded-full mb-6 border border-[#C66D02]/50"
               >
-                Build Your Best Self
+                <span className="text-[#FF9E3B] font-bold text-sm tracking-widest">NEW GENERATION COACHING</span>
               </motion.div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#3A3A3A] leading-tight mb-6">
-                Become Who You <span className="text-[#9E5A63]">Were Meant</span> To Be
+              
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-8">
+                <span className="text-white">Unlock Your </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A7CFF] to-[#FF9E3B]">Brilliance</span>
               </h1>
+              
+              <motion.p
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="text-l md:text-xl text-white/80 mb-10 max-w-lg font-medium"
+              >
+                Transform your mindset with our <span className="text-[#FF9E3B] font-semibold">proven framework</span> that has helped thousands achieve extraordinary results.
+              </motion.p>
             </div>
             
-            <motion.p
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-[#5A5A5A] mb-8 max-w-lg"
-            >
-              Empowering you with clarity, confidence, and purpose, so you can grow intentionally and show up as your best self in life, career, and business.
-            </motion.p>
-            
             <motion.div
-              initial={{ y: 10, opacity: 0 }}
+              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-row text-sm sm:flex-row gap-4"
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-col "
             >
-              <Link to="/coaching" className="bg-[#9E5A63] hover:bg-[#B76E79] text-center text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                Start Your Journey
+              <Link 
+                to="/coaching" 
+                className="px-8 py-4 rounded-full font-bold transition-all duration-300 hover:shadow-lg border-2 border-white/20 hover:border-[#4A7CFF]/50 hover:bg-[#00337C]/20 text-white"
+                style={{
+                  background: 'linear-gradient(45deg, #00337C 0%, #4A7CFF 100%)',
+                  boxShadow: '0 4px 20px rgba(74, 124, 255, 0.3)'
+                }}
+              >
+                <span className="relative z-10 flex justify-center gap-2">
+                  <span>Start Transformation Today</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-1 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                <span className="absolute inset-0 bg-gradient-to-r from-[#FF9E3B] to-[#C66D02] opacity-0 group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay"></span>
               </Link>
-              <Link to="/about" className="border border-[#9E5A63] text-center text-[#5A5A5A] hover:bg-[#F7E8E8] px-6 py-3 rounded-lg font-medium transition-all duration-300">
-                Learn More
-              </Link>
+              
+              
             </motion.div>
           </motion.div>
 
-          {/* Image - Refined styling */}
+          {/* Image Section - DYNAMIC SHOWCASE */}
           <motion.div
-            initial={{ x: 50, opacity: 0 }}
+            initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "backOut" }}
             className="order-1 lg:order-2 relative"
           >
-            <div className="relative w-full h-50 md:h-96 lg:h-[300px] rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-full h-[400px] rounded-[40px] overflow-hidden transform perspective-1000 rotate-y-6 hover:rotate-y-0 transition-transform duration-700 group">
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#00337C]/80 via-transparent to-[#C66D02]/50 z-10"></div>
               <img
                 src="/assets/1.jpg"
-                alt="Hero"
-                className="w-full h-full object-cover"
+                alt="Transformational coaching"
+                className="w-full h-full object-cover object-center scale-110 group-hover:scale-100 transition-transform duration-1000"
               />
-              {/* More subtle overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#F7E8E8]/30 to-transparent"></div>
+              
+             
+              
             </div>
             
-            {/* Refined decorative elements */}
-            <div className="hidden lg:block absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-[#F7E8E8] opacity-80 z-[-1]"></div>
-            <div className="hidden lg:block absolute -top-6 -right-6 w-20 h-20 rounded-full bg-[#D4A5AD] opacity-30 z-[-1]"></div>
+            
           </motion.div>
         </div>
       </div>

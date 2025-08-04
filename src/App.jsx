@@ -21,6 +21,7 @@ import FAQPage from './pages/Faqs'
 import PrivacyPolicy from './pages/Privacy-Policy'
 import TermsAndConditions from './pages/Terms'
 import WhatsAppFloat from './components/FloatingWA'
+import PaymentSuccess from './pages/Successpage'
 
 
 
@@ -52,6 +53,7 @@ export default function Router() {
         <Route path="faqs" element={<FAQPage/>}/>
         <Route path="/privacy" element={<PrivacyPolicy/>}/>
         <Route path="/terms" element={<TermsAndConditions/>}/>
+        <Route path="/payment-success" element={<PaymentSuccess/>}/>
 
         
         

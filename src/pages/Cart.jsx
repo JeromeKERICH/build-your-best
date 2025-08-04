@@ -14,7 +14,7 @@ export default function CheckoutPage(
   useEffect(() => {
     window.scrollTo(0, 0)
   },[])
-  const [step, setStep] = useState(1); // 1 = form, 2 = confirmation
+  const [step, setStep] = useState(1); 
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -24,16 +24,40 @@ export default function CheckoutPage(
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Validate form
-    if (!formData.name || !formData.email || !formData.agreeTerms) {
-      alert('Please fill all required fields');
-      return;
+  
+    const orderDetails = {
+      name: formData.name,
+      email: formData.email,
+      productName: selectedProduct.name,
+      price: selectedProduct.price,
+    };
+  
+    try {
+      const res = await fetch('http://localhost:5000/api/initiate-payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(orderDetails)
+      });
+  
+      const data = await res.json();
+  
+      if (data && data.redirectUrl) {
+        // Redirect to Pesapal
+        window.location.href = data.redirectUrl;
+      } else {
+        alert('Error initiating payment. Please try again.');
+      }
+    } catch (error) {
+      console.error('Payment initiation error:', error);
+      alert('Something went wrong.');
     }
-    setStep(2);
   };
-
+  
+  
   return (
     <div className="max-w-md mx-auto my-12 p-6 bg-white rounded-xl shadow-md">
       {/* Checkout Header */}
@@ -113,6 +137,9 @@ export default function CheckoutPage(
           </button>
         </form>
       ) : (
+
+
+       
         /* Confirmation Step */
         <div className="space-y-6">
           <div className="text-center">
@@ -133,16 +160,7 @@ export default function CheckoutPage(
             </ol>
           </div>
 
-          {/* Payment Gateway Integration Point */}
-          <div className="mt-6 p-4 border-2 border-dashed border-[#B76E79] rounded-lg text-center">
-            <p className="text-sm text-[#5A5A5A] mb-2">Payment gateway will be integrated here</p>
-            <button
-              onClick={() => alert('Payment gateway would process payment here')}
-              className="px-6 py-2 bg-[#B76E79] hover:bg-[#9E5A63] text-white rounded-lg text-sm"
-            >
-              Simulate Payment
-            </button>
-          </div>
+          
 
           <Link
             to="/shop"

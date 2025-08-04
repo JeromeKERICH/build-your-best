@@ -16,7 +16,7 @@ export default function FAQPage() {
   const faqCategories = [
     {
       title: "General Questions",
-      icon: <FaHandsHelping className="text-2xl text-[#B76E79]" />,
+      icon: <FaHandsHelping className="text-2xl text-[#00337C]" />,
       questions: [
         {
           question: "What makes your coaching approach unique?",
@@ -34,7 +34,7 @@ export default function FAQPage() {
     },
     {
       title: "Process & Logistics",
-      icon: <GiStonePath className="text-2xl text-[#B76E79]" />,
+      icon: <GiStonePath className="text-2xl text-[#00337C]" />,
       questions: [
         {
           question: "How often do coaching sessions occur?",
@@ -52,7 +52,7 @@ export default function FAQPage() {
     },
     {
       title: "Technical Details",
-      icon: <FaLock className="text-2xl text-[#B76E79]" />,
+      icon: <FaLock className="text-2xl text-[#00337C]" />,
       questions: [
         {
           question: "What platform do you use for sessions?",
@@ -70,7 +70,7 @@ export default function FAQPage() {
     },
     {
       title: "Group Coaching Specific",
-      icon: <FaComments className="text-2xl text-[#B76E79]" />,
+      icon: <FaComments className="text-2xl text-[#00337C]" />,
       questions: [
         {
           question: "How are group coaching cohorts structured?",
@@ -88,7 +88,7 @@ export default function FAQPage() {
     },
     {
       title: "Results & Expectations",
-      icon: <FaUserCheck className="text-2xl text-[#B76E79]" />,
+      icon: <FaUserCheck className="text-2xl text-[#00337C]" />,
       questions: [
         {
           question: "How soon will I see results?",
@@ -107,30 +107,30 @@ export default function FAQPage() {
   ];
 
   return (
-    <div className="bg-[#F5EFE7] min-h-screen">
+    <div className="bg-[#F5F9FF] min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#F7E8E8] to-[#F5EFE7]">
+      <section className="relative py-20 bg-gradient-to-br from-[#E6F0FF] to-[#F5F9FF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-[#3A3A3A] mb-6">
+          <h1 className="text-2xl md:text-5xl font-bold text-[#00337C] mb-6">
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-[#5A5A5A] max-w-3xl mx-auto mb-8">
             Everything you need to know about working with me
           </p>
-          <div className="w-16 h-1 bg-[#B76E79] mx-auto"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#00337C] to-[#B76E79] mx-auto"></div>
         </div>
       </section>
 
       {/* FAQ Content */}
-      <section className="relative py-5 md:py-10 bg-white">
+      <section className="relative py-12 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Search Bar */}
-          <div className="mb-12">
+          <div className="mb-16">
             <div className="relative max-w-xl mx-auto">
               <input
                 type="text"
                 placeholder="Search questions..."
-                className="w-full px-6 py-4 border border-[#D1D1D1] rounded-lg focus:ring-[#B76E79] focus:border-[#B76E79] pl-12"
+                className="w-full px-6 py-4 border border-[#D1D1D1] rounded-xl focus:ring-[#00337C] focus:border-[#00337C] pl-12 text-gray-700"
               />
               <svg
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-[#5A5A5A]"
@@ -144,34 +144,32 @@ export default function FAQPage() {
           </div>
 
           {/* FAQ Categories */}
-          <div className="space-y-12">
+          <div className="space-y-16">
             {faqCategories.map((category, catIndex) => (
-              <div key={catIndex} className="border-b border-[#F7E8E8] pb-8 last:border-0 last:pb-0">
-                <div className="flex items-center mb-6">
-                  <div className="mr-4">
-                    {category.icon}
-                  </div>
-                  <h2 className="text-2xl font-bold text-[#3A3A3A]">{category.title}</h2>
+              <div key={catIndex} className="border-b border-[#E6F0FF] pb-12 last:border-0 last:pb-0">
+                <div className="flex items-center mb-8">
+                 
+                  <h2 className="text-2xl font-bold text-[#00337C]">{category.title}</h2>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {category.questions.map((item, index) => {
                     const questionIndex = catIndex * 10 + index;
                     return (
-                      <div key={index} className="border border-[#F7E8E8] rounded-xl overflow-hidden">
+                      <div key={index} className="border border-[#E6F0FF] rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md">
                         <button
-                          className={`flex justify-between items-center w-full px-6 py-4 text-left ${activeIndex === questionIndex ? 'bg-[#F5EFE7]' : 'bg-white'}`}
+                          className={`flex justify-between items-center w-full px-6 py-5 text-left ${activeIndex === questionIndex ? 'bg-[#F5F9FF]' : 'bg-white'}`}
                           onClick={() => toggleAccordion(questionIndex)}
                         >
-                          <span className="font-medium text-[#3A3A3A]">{item.question}</span>
+                          <span className="font-medium text-[#00337C]">{item.question}</span>
                           {activeIndex === questionIndex ? (
-                            <FaChevronUp className="text-[#B76E79]" />
+                            <FaChevronUp className="text-[#00337C]" />
                           ) : (
-                            <FaChevronDown className="text-[#B76E79]" />
+                            <FaChevronDown className="text-[#00337C]" />
                           )}
                         </button>
                         {activeIndex === questionIndex && (
-                          <div className="px-6 py-4 bg-white text-[#5A5A5A]">
+                          <div className="px-6 py-5 bg-white text-[#5A5A5A] border-t border-[#E6F0FF]">
                             {item.answer}
                           </div>
                         )}
@@ -185,33 +183,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Still Have Questions */}
-      <section className="py-5 md:py-10 bg-[#F5EFE7]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
-            <h2 className="text-2xl font-bold text-[#3A3A3A] mb-6">
-              Still Have Questions?
-            </h2>
-            <p className="text-xl text-[#5A5A5A] mb-8 max-w-2xl mx-auto">
-              I'm happy to answer any other questions you might have about coaching.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="mailto:hello@buildyourbestselfblog.com"
-                className="px-8 py-4 bg-[#B76E79] hover:bg-[#9E5A63] text-white rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Email Me
-              </a>
-              <Link
-                to="/contact"
-                className="px-8 py-4 border border-[#B76E79] text-[#B76E79] hover:bg-white rounded-lg font-medium text-lg transition-all duration-300"
-              >
-                Contact Form
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }
