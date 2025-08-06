@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
+import { supabase } from '../library/supabaseClient';
 
 export default function BookingModal({ isOpen, onClose, packageName }) {
   const [formData, setFormData] = useState({
@@ -18,42 +19,39 @@ export default function BookingModal({ isOpen, onClose, packageName }) {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+ 
 
-    try {
-      // Send to Resend API
-      const response = await fetch('/api/send-booking', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-      if (response.ok) {
-        setSubmitSuccess(true);
-        // Reset form after successful submission
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          message: '',
-          package: packageName
-        });
-      } else {
-        throw new Error('Submission failed');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-    } finally {
-      setIsSubmitting(false);
+  try {
+    // Insert into Supabase
+    const { error } = await supabase.from('bookings').insert([formData]);
+
+    if (error) {
+      throw error;
     }
-  };
+
+    // If insert is successful
+    setSubmitSuccess(true);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      package: packageName
+    });
+
+  } catch (error) {
+    console.error('Error submitting to Supabase:', error.message);
+    // Optionally: show an error UI or toast here
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   if (!isOpen) return null;
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50">
       <motion.div 

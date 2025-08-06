@@ -6,15 +6,15 @@ export default function PrivacyPolicy() {
         window.scrollTo(0, 0)
     }, [])
   return (
-    <div className="bg-[#F5EFE7] min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#F7E8E8] to-[#F5EFE7]">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#F5F9FF] to-[#FFF0F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center bg-white/90 text-[#B76E79] px-4 py-1 rounded-full mb-4">
             <FaShieldAlt className="mr-2" />
             <span className="text-sm font-medium">YOUR PRIVACY MATTERS</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#3A3A3A] mb-6">
+          <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-[#00337C] to-[#B76E79] text-2xl md:text-4xl lg:text-5xl font-bold">
             Privacy Policy
           </h1>
           <p className="text-xl text-[#5A5A5A] max-w-3xl mx-auto">
@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
               {/* Information Collection */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaLock className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">1. Information We Collect</h2>
                 </div>
                 <div className="space-y-4">
@@ -68,7 +68,7 @@ export default function PrivacyPolicy() {
               {/* How We Use Information */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaUserCheck className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">2. How We Use Your Information</h2>
                 </div>
                 <div className="space-y-4">
@@ -91,7 +91,7 @@ export default function PrivacyPolicy() {
               {/* Data Protection */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaShieldAlt className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">3. Data Protection</h2>
                 </div>
                 <div className="space-y-4">
@@ -115,7 +115,7 @@ export default function PrivacyPolicy() {
               {/* Cookies */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaServer className="text-2xl text-[#B76E79] mr-4" />
+                 >
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">4. Cookies & Tracking</h2>
                 </div>
                 <div className="space-y-4">
@@ -138,7 +138,7 @@ export default function PrivacyPolicy() {
               {/* Third Parties */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaEnvelope className="text-2xl text-[#B76E79] mr-4" />
+                 
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">5. Third-Party Services</h2>
                 </div>
                 <div className="space-y-4">
@@ -161,7 +161,7 @@ export default function PrivacyPolicy() {
               {/* Your Rights */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaUserCheck className="text-2xl text-[#B76E79] mr-4" />
+               
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">6. Your Rights</h2>
                 </div>
                 <div className="space-y-4">
@@ -185,7 +185,7 @@ export default function PrivacyPolicy() {
               {/* Policy Updates */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaShieldAlt className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">7. Policy Updates</h2>
                 </div>
                 <div className="space-y-4">
@@ -203,7 +203,7 @@ export default function PrivacyPolicy() {
               {/* Contact */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaEnvelope className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">8. Contact Us</h2>
                 </div>
                 <div className="space-y-4">
@@ -225,7 +225,7 @@ export default function PrivacyPolicy() {
       <section className="py-12 bg-[#F5EFE7]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white rounded-xl p-8 shadow-sm">
-            <FaShieldAlt className="text-4xl mx-auto text-[#B76E79] mb-4" />
+           
             <h3 className="text-xl font-bold text-[#3A3A3A] mb-2">
               Committed to Your Privacy
             </h3>

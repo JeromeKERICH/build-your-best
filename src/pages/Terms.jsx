@@ -8,13 +8,13 @@ export default function TermsAndConditions() {
   return (
     <div className="bg-[#F5EFE7] min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-[#F7E8E8] to-[#F5EFE7]">
+      <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#F5F9FF] to-[#FFF0F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center bg-white/90 text-[#B76E79] px-4 py-1 rounded-full mb-4">
-            <FaBalanceScale className="mr-2" />
+           
             <span className="text-sm font-medium">LEGAL TERMS</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-[#3A3A3A] mb-6">
+          <h1 className="bg-clip-text text-transparent bg-gradient-to-r from-[#00337C] to-[#B76E79] text-2xl md:text-4xl lg:text-5xl font-bold">
             Terms & Conditions
           </h1>
           <p className="text-xl text-[#5A5A5A] max-w-3xl mx-auto">
@@ -37,7 +37,7 @@ export default function TermsAndConditions() {
               {/* Service Description */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaBook className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">1. Service Overview</h2>
                 </div>
                 <div className="space-y-4">
@@ -60,7 +60,7 @@ export default function TermsAndConditions() {
               {/* Client Responsibilities */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaGavel className="text-2xl text-[#B76E79] mr-4" />
+                
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">2. Client Responsibilities</h2>
                 </div>
                 <div className="space-y-4">
@@ -82,7 +82,7 @@ export default function TermsAndConditions() {
               {/* Payments & Refunds */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaExchangeAlt className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">3. Payments & Refunds</h2>
                 </div>
                 <div className="space-y-4">
@@ -111,7 +111,7 @@ export default function TermsAndConditions() {
               {/* Intellectual Property */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaBook className="text-2xl text-[#B76E79] mr-4" />
+             
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">4. Intellectual Property</h2>
                 </div>
                 <div className="space-y-4">
@@ -134,7 +134,7 @@ export default function TermsAndConditions() {
               {/* Limitations */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaExclamationTriangle className="text-2xl text-[#B76E79] mr-4" />
+                 
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">5. Limitations of Liability</h2>
                 </div>
                 <div className="space-y-4">
@@ -157,7 +157,7 @@ export default function TermsAndConditions() {
               {/* Termination */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaGavel className="text-2xl text-[#B76E79] mr-4" />
+                 
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">6. Termination</h2>
                 </div>
                 <div className="space-y-4">
@@ -178,7 +178,7 @@ export default function TermsAndConditions() {
               {/* Governing Law */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaBalanceScale className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">7. Governing Law</h2>
                 </div>
                 <div className="space-y-4">
@@ -196,7 +196,7 @@ export default function TermsAndConditions() {
               {/* Changes */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaExclamationTriangle className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">8. Changes to Terms</h2>
                 </div>
                 <div className="space-y-4">
@@ -214,7 +214,7 @@ export default function TermsAndConditions() {
               {/* Contact */}
               <div>
                 <div className="flex items-center mb-6">
-                  <FaQuestionCircle className="text-2xl text-[#B76E79] mr-4" />
+                  
                   <h2 className="text-2xl font-bold text-[#3A3A3A]">9. Contact Us</h2>
                 </div>
                 <div className="space-y-4">

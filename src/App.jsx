@@ -7,7 +7,7 @@ import ProductsComponent from './pages/Shop'
 import About from './pages/About'
 import CoachingPackages from './pages/Coaching'
 import BlogPage from './pages/Blogs'
-import CommunityPage from './pages/Community'
+
 import ContactPage from './pages/Contact'
 import QuizResults from './pages/Discovery'
 import BlogDetail from './pages/BlogDetails'
@@ -41,7 +41,7 @@ export default function Router() {
         <Route path="/coaching" element={<CoachingPackages/>}/>
         <Route path="/blogs" element={<BlogPage/>}/>
         <Route path="/blog/:id" element={<BlogDetail />} />
-        <Route path="/community" element={<CommunityPage/>}/>
+        
         <Route path="/contact" element={<ContactPage/>}/>
         <Route path="/discovery" element={<QuizResults/>}/>
         <Route path="/cart" element={<CheckoutPage/>}/>

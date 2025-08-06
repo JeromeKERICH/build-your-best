@@ -1,10 +1,50 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { supabase } from '../library/supabaseClient';
 
 export default function BlogPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ text: '', type: '' });
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage({ text: '', type: '' });
+
+    try {
+      // Insert into your 'subscribers' table
+      const { error } = await supabase
+        .from('subscribers')
+        .insert([{ 
+          email: email,
+          subscribed_at: new Date().toISOString(),
+          source: 'website_cta'
+        }]);
+
+      if (error) throw error;
+
+      setMessage({ 
+        text: 'Thanks for subscribing! Check your email for confirmation.', 
+        type: 'success' 
+      });
+      setEmail('');
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setMessage({ 
+        text: error.message || 'Subscription failed. Please try again.', 
+        type: 'error' 
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
     const [activeCategory, setActiveCategory] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
@@ -157,12 +197,34 @@ export default function BlogPage() {
                                 <div className="mt-12 bg-gradient-to-br from-[#F5F9FF] to-[#FFF0F0] p-6 rounded-xl border border-[#00337C]/20">
                                     <h3 className="text-lg font-bold text-gray-900 mb-3">Get Weekly Insights</h3>
                                     <p className="text-gray-600 mb-4">Join our newsletter for exclusive content and resources</p>
-                                    <Link
-                                        to="/newsletter"
-                                        className="block w-full text-center px-4 py-3 bg-gradient-to-r from-[#00337C] to-[#1E4B9E] hover:from-[#1E4B9E] hover:to-[#00337C] text-white rounded-xl font-medium shadow-md hover:shadow-lg transition-all duration-300"
-                                    >
-                                        Join the Newsletter
-                                    </Link>
+                                    <form onSubmit={handleSubscribe} className="space-y-4">
+                                            <input 
+                                            type="email" 
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            placeholder="Your email address" 
+                                            className="w-full px-6 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00337C] focus:border-transparent text-gray-700"
+                                            required
+                                            />
+                                            
+                                            {message.text && (
+                                            <p className={`text-sm ${
+                                                message.type === 'success' ? 'text-green-600' : 'text-red-600'
+                                            }`}>
+                                                {message.text}
+                                            </p>
+                                            )}
+                                            
+                                            <motion.button
+                                            type="submit"
+                                            whileHover={{ scale: 1.03 }}
+                                            whileTap={{ scale: 0.98 }}
+                                            className="w-full bg-gradient-to-r from-[#B76E79] to-[#C66D02] hover:from-[#C66D02] hover:to-[#B76E79] text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg disabled:opacity-70"
+                                            disabled={loading}
+                                            >
+                                            {loading ? 'Subscribing...' : 'Join the Mailing List'}
+                                            </motion.button>
+                                        </form>
                                 </div>
                             </div>
                         </div>

@@ -20,7 +20,6 @@ export default function Navbar() {
     { name: 'Coaching', to: '/coaching' },
     { name: 'Shop', to: '/shop' },
     { name: 'Blog', to: '/blogs' },
-    { name: 'Community', to: '/community' },
     { name: 'Contact', to: '/contact' },
   ];
 

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
 import CheckoutPage from './Cart';
 
@@ -19,6 +18,7 @@ export default function ShopPage() {
       id: 1,
       name: "Boundaries and Balance",
       category: "boundaries",
+      file: "Boundaries & Balance.pdf",
       focus: ["self-care", "relationships"],
       price: 18,
       isBestseller: true,
@@ -28,19 +28,21 @@ export default function ShopPage() {
     },
     {
       id: 2,
-      name: "Healing is Messy",
+      name: "5-Day Discovery Challenge",
       category: "healing",
+      file: "Discovery Challenge.pdf",
       focus: ["self-discovery", "growth"],
       price: 15,
       isBestseller: true,
       image: "/assets/heal.jpg",
-      description: "Embrace the non-linear journey of personal healing and transformation",
+      description: "Embrace the non-linear journey of personal discovery and transformation",
       dimensions: { width: 2480, height: 2500 }
     },
     {
       id: 3,
       name: "Reclaim Your Power",
       category: "empowerment",
+      file: "RECLAIM YOUR POWER.pdf",
       focus: ["confidence", "purpose"],
       price: 20,
       isBestseller: true,
@@ -52,6 +54,7 @@ export default function ShopPage() {
       id: 4,
       name: "The Self-Awareness Guide",
       category: "awareness",
+      file: "Self Awareness.pdf",
       focus: ["mindfulness", "clarity"],
       price: 0,
       isBestseller: false,
@@ -60,7 +63,7 @@ export default function ShopPage() {
       dimensions: { width: 2480, height: 2500 }
     }
   ];
-
+  
   // Image loading optimization
   const [loadedImages, setLoadedImages] = useState({});
   const handleImageLoad = (id) => {

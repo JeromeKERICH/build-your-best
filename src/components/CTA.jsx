@@ -1,32 +1,54 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { supabase } from '../library/supabaseClient'; // Adjust path as needed
 
 export default function CTASection() {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ text: '', type: '' });
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage({ text: '', type: '' });
+
+    try {
+      // Insert into your 'subscribers' table
+      const { error } = await supabase
+        .from('subscribers')
+        .insert([{ 
+          email: email,
+          subscribed_at: new Date().toISOString(),
+          source: 'website_cta'
+        }]);
+
+      if (error) throw error;
+
+      setMessage({ 
+        text: 'Thanks for subscribing! Check your email for confirmation.', 
+        type: 'success' 
+      });
+      setEmail('');
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setMessage({ 
+        text: error.message || 'Subscription failed. Please try again.', 
+        type: 'error' 
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <section className="relative bg-white py-5 md:py-14  overflow-hidden">
-      {/* Dynamic background elements */}
+    <section className="relative bg-white py-5 md:py-14 overflow-hidden">
+      {/* Background elements remain the same */}
       <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-[#F7D9D9] opacity-20 mix-blend-multiply filter blur-3xl -translate-x-1/3 -translate-y-1/3 animate-float-slow"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#00337C] opacity-10 mix-blend-multiply filter blur-3xl translate-x-1/3 translate-y-1/3 animate-float"></div>
-
-      <div className="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-3">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00337C] to-[#B76E79]">
-              Let's Build Your Best Self.
-            </span>
-
-          </h2>
-          
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Coaching CTA */}
-          <motion.div
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -51,46 +73,51 @@ export default function CTASection() {
             </motion.button>
           </motion.div>
 
-          {/* Mailing List CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#FFF0F0] to-[#F5F9FF] p-8 md:p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#B76E79]/20"
-          >
-            <h3 className="text-lg md:text-xl font-bold text-[#B76E79] mb-6">Not Quite Ready?</h3>
-            <p className="text-gray-700 mb-6 text-l">
-              Get <span className="font-semibold">weekly insights</span>, tools, and motivation delivered straight to your inbox, plus a free self-discovery guide.
-            </p>
-            <div className="space-y-4">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="w-full px-6 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00337C] focus:border-transparent text-gray-700"
-              />
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-[#B76E79] to-[#C66D02] hover:from-[#C66D02] hover:to-[#B76E79] text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg"
-              >
-                Join the Mailing List
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-
+        {/* Mailing List CTA - Updated */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="bg-gradient-to-br from-[#FFF0F0] to-[#F5F9FF] p-8 md:p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-[#B76E79]/20"
         >
-          <p className="text-xl font-medium text-[#00337C]">
-            <span className="text-[#B76E79]">✦</span> It's time to show up for yourself <span className="text-[#B76E79]">✦</span>
+          <h3 className="text-lg md:text-xl font-bold text-[#B76E79] mb-6">Not Quite Ready?</h3>
+          <p className="text-gray-700 mb-6 text-l">
+            Get <span className="font-semibold">weekly insights</span>, tools, and motivation delivered straight to your inbox.
           </p>
+          
+          <form onSubmit={handleSubscribe} className="space-y-4">
+            <input 
+              type="email" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address" 
+              className="w-full px-6 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00337C] focus:border-transparent text-gray-700"
+              required
+            />
+            
+            {message.text && (
+              <p className={`text-sm ${
+                message.type === 'success' ? 'text-green-600' : 'text-red-600'
+              }`}>
+                {message.text}
+              </p>
+            )}
+            
+            <motion.button
+              type="submit"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full bg-gradient-to-r from-[#B76E79] to-[#C66D02] hover:from-[#C66D02] hover:to-[#B76E79] text-white px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-lg disabled:opacity-70"
+              disabled={loading}
+            >
+              {loading ? 'Subscribing...' : 'Join the Mailing List'}
+            </motion.button>
+          </form>
         </motion.div>
+
+      
+      </div>
       </div>
     </section>
   );

@@ -48,7 +48,7 @@ export default function PersonalEmpowermentCoaching() {
             </p>
             <div className="flex justify-center gap-4">
             <button
-                onClick={() => handleBookNow('Career Coaching')}
+                onClick={() => handleBookNow('Personal Development')}
                 className="px-8 py-3 bg-gradient-to-r from-[#00337C] to-[#1E4B9E] hover:from-[#1E4B9E] hover:to-[#00337C] text-white rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Book Now

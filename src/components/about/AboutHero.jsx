@@ -72,7 +72,7 @@ export default function AboutHero() {
           >
             <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl border-[6px] border-white">
               <img
-                src="/assets/bren.jpg"
+                src="/assets/coach.jpg"
                 alt="Brenda Viola - Founder of Build Your Best Self"
                 className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                 loading="eager"
