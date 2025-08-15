@@ -56,13 +56,13 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="ml-2 pl-4 border-l border-gray-200">
-              <Link
-                to="/book"
+              <a
+                href="https://calendly.com/buildyourbestselfblog-info"
                 className="flex items-center gap-2 bg-gradient-to-r from-[#00337C] to-[#1E40AF] hover:from-[#1E40AF] hover:to-[#00337C] text-white px-5 py-2.5 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg hover:scale-[1.02]"
               >
                 Book Session
                 <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -97,14 +97,14 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Link
-            to="/book"
+          <a
+            href="https://calendly.com/buildyourbestselfblog-info"
             className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-[#00337C] to-[#1E40AF] text-white px-4 py-3.5 rounded-lg font-medium mt-2 shadow-md hover:shadow-lg transition-all duration-300"
             onClick={() => setIsOpen(false)}
           >
             Book a Session
             <FiArrowRight />
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

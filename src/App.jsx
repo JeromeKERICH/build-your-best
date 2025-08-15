@@ -22,6 +22,7 @@ import PrivacyPolicy from './pages/Privacy-Policy'
 import TermsAndConditions from './pages/Terms'
 import WhatsAppFloat from './components/FloatingWA'
 import PaymentSuccess from './pages/Successpage'
+import Founder from './pages/Founder'
 
 
 
@@ -35,13 +36,12 @@ export default function Router() {
       <Routes>
       
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About/>}/>
-        <Route path="/founder" element={<MeetBrenda/>}/>
+        <Route path="/founder" element={<About/>}/>
         <Route path="/shop" element={<ProductsComponent/>}/>
         <Route path="/coaching" element={<CoachingPackages/>}/>
         <Route path="/blogs" element={<BlogPage/>}/>
         <Route path="/blog/:id" element={<BlogDetail />} />
-        
+        <Route path="/about" element={<Founder/>}/>
         <Route path="/contact" element={<ContactPage/>}/>
         <Route path="/discovery" element={<QuizResults/>}/>
         <Route path="/cart" element={<CheckoutPage/>}/>

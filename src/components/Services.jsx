@@ -28,7 +28,7 @@ export default function Services() {
       title: "One-on-One Coaching",
       description: "Personalized sessions designed around your unique goals and pace.",
       details: "Private coaching with Brenda for focused and empowering transformation.",
-      image: "assets/coac.jpg",
+      image: "assets/bren.jpeg",
       link: "/one-one"
     },
     {

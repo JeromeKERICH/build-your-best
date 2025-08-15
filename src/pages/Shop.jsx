@@ -34,7 +34,7 @@ export default function ShopPage() {
       focus: ["self-discovery", "growth"],
       price: 15,
       isBestseller: true,
-      image: "/assets/heal.jpg",
+      image: "/assets/5-d.jpg",
       description: "Embrace the non-linear journey of personal discovery and transformation",
       dimensions: { width: 2480, height: 2500 }
     },

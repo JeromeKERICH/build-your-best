@@ -127,19 +127,19 @@ export default function TransformationSection() {
               {
                 title: "Start Here",
                 description: "Discover how we can work together",
-                link: "/start-here",
+                link: "/coaching",
                 color: "bg-gradient-to-r from-[#00337C] to-[#1E4B9E] hover:from-[#1E4B9E] hover:to-[#00337C] text-white"
               },
               {
                 title: "Book a Session",
                 description: "Let's create a path that fits your vision",
-                link: "/book",
+                link: "/contact",
                 color: "bg-white border-2 border-[#00337C] text-[#00337C] hover:bg-[#00337C]/10"
               },
               {
                 title: "Free Resource",
                 description: "Take your first step today",
-                link: "/free-resource",
+                link: "/shop",
                 color: "bg-white border-2 border-[#B76E79] text-[#B76E79] hover:bg-[#B76E79]/10"
               }
             ].map((cta, index) => (

@@ -2,6 +2,7 @@ import { FaInstagram, FaFacebook, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { useState } from 'react';
 import { supabase } from '../library/supabaseClient'; // Adjust path as needed
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -60,14 +61,14 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white">Quick Links</h3>
             <ul className="space-y-2">
-              {['Home', 'About', 'Coaching', 'Shop', 'Blog', 'Contact'].map((item) => (
+              {['About', 'Coaching', 'Shop', 'Blogs', 'Contact'].map((item) => (
                 <li key={item}>
-                  <a
-                    href={`/${item.toLowerCase()}`}
+                  <Link
+                    to={`/${item.toLowerCase()}`}
                     className="text-sm hover:text-[#1E40AF] transition-colors duration-200"
                   >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -77,7 +78,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-white">Resources</h3>
             <ul className="space-y-2">
-              {['FAQs', 'Community', 'Privacy', 'Terms'].map((item) => (
+              {['FAQs', 'Privacy', 'Terms'].map((item) => (
                 <li key={item}>
                   <a
                     href={`/${item.toLowerCase().replace(' ', '-').replace('&', 'and')}`}
