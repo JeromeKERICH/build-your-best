@@ -117,10 +117,7 @@ So if you feel stuck today, start by asking these questions.  </p>
 
         <h3>Try This: Gentle Self-Coaching Exercise</h3>
         <p>Choose one question from this post. Set a timer for 10 minutes. Journal your thoughts...</p>
-        <h3>Want More Support?</h3>
-    
-          <p><a href="#">Download our FREE Self-Discovery Guide</a></p>
-          <p><a href="#">Book a 1:1 Clarity Coaching Session</a></p>
+        
 
       `
     },
@@ -240,9 +237,7 @@ So if you feel stuck today, start by asking these questions.  </p>
           <em>“If I fully believed I was worthy again, how would I walk through the next 24 hours?”</em></p>
           <p>Write it without censoring. Let your future self speak through your pen.</p>
       
-          <h3>Need a Boost? I’ve Got You.</h3>
-          <p><a href="#">💬 Book a Confidence Coaching Session</a> – Let’s work through your stuckness together</p>
-          <p><a href="#">📥 Download the Confidence Builder Workbook</a> – A beautiful, printable guide to reset your mindset and rebuild belief in yourself</p>
+          
         `
       },
 
@@ -315,11 +310,7 @@ So if you feel stuck today, start by asking these questions.  </p>
           <p>Grab a notebook or open your notes app. Set a timer for 10 minutes.
           Answer this question without judgment or editing:<br/><em>“What would I do, try, or explore if I fully trusted my inner wisdom?”</em></p>
     
-          <h3>Want Support as You Clarify Your Career Path?</h3>
-          <ul>
-            <li><a href="#">Download the Career Clarity Roadmap Workbook</a></li>
-            <li><a href="#">Book a Career Coaching Session</a></li>
-          </ul>
+          
         `
       },
 
@@ -464,11 +455,7 @@ So if you feel stuck today, start by asking these questions.  </p>
           <h3>Try This: Your Ideal Day Visualization</h3>
           <p>Imagine a grounded, calm, fulfilling day. What were you doing? What brought peace? Pick one part of that day and start living it now.</p>
     
-          <h3>Want Support Designing a Life That Feels Like You?</h3>
-          <ul>
-            <li><a href="#">Download the Intentional Living Workbook</a></li>
-            <li><a href="#">Book a Personal Empowerment Coaching Session</a></li>
-          </ul>
+          
         `
       },
 
@@ -585,12 +572,7 @@ So if you feel stuck today, start by asking these questions.  </p>
       <li>How can I support myself while I get things done?</li>
     </ul>
     
-    <h2>Want to Plan from a Place of Peace?</h2>
-    <ul>
-     <li> <a href"#">Download the Gentle Productivity Planner</a> – Weekly layouts, Daily Top 3 focus sheets, Emotional check-ins, Rest prompts</li>
-     <li> <a href"#">Book a 1:1 Productivity Reset Coaching Session</a> – We'll identify your productivity blocks and create a sustainable rhythm that works for you</li>
-    </ul>
-    <p>Get the Planner<br>Book a Session</p>
+   
     `
       }
   ];

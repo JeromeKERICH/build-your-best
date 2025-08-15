@@ -56,7 +56,7 @@ export default function BlogPage() {
             title: "Feeling Stuck? 5 Gentle Questions That Will Help You Move Forward",
             excerpt: "Self-reflection, clarity, emotional growth, personal development, healing",
             category: "career",
-            date: "May 15, 2023",
+            date: "June 15, 2025",
             readTime: "6 min read",
             image: "/assets/b5.jpg"
         },
@@ -65,7 +65,7 @@ export default function BlogPage() {
             title: "Rebuilding Your Confidence",
             excerpt: "Practical exercises to rebuild your confidence muscle",
             category: "confidence",
-            date: "April 28, 2023",
+            date: "June 30, 2025",
             readTime: "8 min read",
             image: "/assets/b4.jpg",
             isFeatured: true
@@ -75,7 +75,7 @@ export default function BlogPage() {
             title: "Career Clarity: Finding Your Next Right Step",
             excerpt: "Start your day with intention and clarity",
             category: "productivity",
-            date: "April 10, 2023",
+            date: "June 22, 2025",
             readTime: "5 min read",
             image: "/assets/b2.jpg"
         },
@@ -84,7 +84,7 @@ export default function BlogPage() {
             title: "7 Signs You're Ready for a Mindset Reset",
             excerpt: "Setting boundaries that honor your energy",
             category: "mindset",
-            date: "March 22, 2023",
+            date: "July 8, 2025",
             readTime: "7 min read",
             image: "/assets/b7.jpg"
         },
@@ -93,7 +93,7 @@ export default function BlogPage() {
             title: "Intentional Living",
             excerpt: "How to Build a Life That Feels Like You",
             category: "career",
-            date: "March 15, 2023",
+            date: "Jan 15, 2025",
             readTime: "9 min read",
             image: "/assets/b1.jpg"
         },
@@ -102,7 +102,7 @@ export default function BlogPage() {
             title: "From Burnout to Balance",
             excerpt: "Recalibrating your life with intention",
             category: "life-design",
-            date: "February 28, 2023",
+            date: "July 20, 2025",
             readTime: "10 min read",
             image: "/assets/b3.jpg",
             isFeatured: true
