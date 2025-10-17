@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: About */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white">About Brenda</h3>
+            <h3 className="text-xl font-bold text-white">About BYBS</h3>
             <p className="text-sm">
               Helping women reclaim their power and build the life they deserve through purpose-led coaching and practical tools.
             </p>
@@ -80,12 +80,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {['FAQs', 'Privacy', 'Terms'].map((item) => (
                 <li key={item}>
-                  <a
-                    href={`/${item.toLowerCase().replace(' ', '-').replace('&', 'and')}`}
+                  <Link
+                    to={`/${item.toLowerCase().replace(' ', '-').replace('&', 'and')}`}
                     className="text-sm hover:text-[#1E40AF] transition-colors duration-200"
                   >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -174,7 +174,7 @@ export default function Footer() {
               <a href="/terms" className="text-gray-900 transition-colors duration-200">Terms of Service</a>
             </div>
             <p className="mt-2 md:mt-0 text-gray-900">
-              Designed by Emmanuel Kerich 😉
+              Designed by <a href="https://www.linkedin.com/in/emmanuelkerich/">Emmanuel Kerich 😉</a>
             </p>
           </div>
         </div>

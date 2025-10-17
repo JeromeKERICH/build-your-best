@@ -10,13 +10,7 @@ export default function Services() {
       image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       link: "/personal"
     },
-    {
-      title: "Career Coaching",
-      description: "For professionals seeking clarity, growth, or transition.",
-      details: "Get unstuck, align your path with your strengths, and pursue meaningful work.",
-      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/careercoaching"
-    },
+    
     {
       title: "Entrepreneurial Coaching",
       description: "For purpose-driven women ready to launch or grow their ventures.",
@@ -31,13 +25,9 @@ export default function Services() {
       image: "assets/bren.jpeg",
       link: "/one-one"
     },
-    {
-      title: "Group Coaching (Coming Soon!)",
-      description: "For those who grow better in community.",
-      details: "Live sessions, accountability, and shared breakthroughs in a supportive space.",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      link: "/group-coaching"
-    }
+    
+
+   
   ];
 
   return (

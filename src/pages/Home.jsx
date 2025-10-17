@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import AboutSection from '../components/About'
 import ServicesProducts from '../components/Services'
 import CTASection from '../components/CTA'
+import FellowshipPopup from '../layouts/Fellowship'
 
 const Home = () => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const Home = () => {
 }, []);
   return (
     <div>
+      <FellowshipPopup/>
       <Hero/>
       <AboutSection/>
       <ServicesProducts/>

@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import CoachingCheckout from './Cart2';
 import { Link } from 'react-router-dom';
-import CheckoutPage from './Cart';
+
 
 export default function CoachingPackages() {
     useEffect(() => {
@@ -57,38 +58,8 @@ export default function CoachingPackages() {
             quantity: 1,
             type: "coaching"
         },
-        {
-            name: "Career Clarity Coaching",
-            price: "$120",
-            description: "Specialized guidance for career transitions and professional growth.",
-            features: [
-                "Four 60-minute sessions",
-                "Strengths assessment",
-                "Career mapping",
-                "Interview/negotiation prep",
-                "LinkedIn profile review"
-            ],
-            popular: false,
-            link: "/book/career-clarity",
-            quantity: 1,
-            type: "coaching"
-        },
-        {
-            name: "Group Coaching Circle",
-            price: "$35/session",
-            description: "Community support with expert guidance (Coming Soon).",
-            features: [
-                "90-minute group sessions",
-                "Monthly themes",
-                "Peer accountability",
-                "Bonus materials",
-                "$90 for 3-session package"
-            ],
-            comingSoon: true,
-            link: "/waitlist/group-coaching",
-            quantity: 1,
-            type: "coaching"
-        }
+        
+       
     ];
 
     const handleBookNow = (pkg) => {
@@ -102,7 +73,7 @@ export default function CoachingPackages() {
     };
 
     if (showCheckout && selectedPackage) {
-        return <CheckoutPage selectedProduct={selectedPackage} />;
+        return <CoachingCheckout selectedProduct={selectedPackage} />;
     }
 
     return (
@@ -215,17 +186,16 @@ export default function CoachingPackages() {
                                     <th className="py-4 px-6 text-center">Clarity Boost</th>
                                     <th className="py-4 px-6 text-center">Breakthrough Bundle</th>
                                     <th className="py-4 px-6 text-center">Transformation</th>
-                                    <th className="py-4 px-6 text-center">Career Clarity</th>
-                                    <th className="py-4 px-6 text-center">Group Circle</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-gray-200">
                                 {[
-                                    { feature: 'Session Length', values: ['60 min', '3x60 min', '6x60 min', '4x60 min', '90 min'] },
-                                    { feature: 'Between-session Support', values: ['Email', 'Email + Texts', 'Priority Email', 'Email', 'Community'] },
-                                    { feature: 'Custom Resources', values: ['✓', '✓', '✓', '✓', '✓'] },
-                                    { feature: 'Assessment Tools', values: ['-', 'Basic', 'Comprehensive', 'Career-focused', 'Group'] },
-                                    { feature: 'Accountability', values: ['-', '✓', '✓', '✓', 'Peer'] }
+                                    { feature: 'Session Length', values: ['60 min', '3x60 min', '6x60 min', ] },
+                                    { feature: 'Between-session Support', values: ['Email', 'Email + Texts', 'Priority Email'] },
+                                    { feature: 'Custom Resources', values: ['✓', '✓', '✓'] },
+                                    { feature: 'Assessment Tools', values: ['-', 'Basic', 'Comprehensive'] },
+                                    { feature: 'Accountability', values: ['-', '✓', '✓', ]},
                                 ].map((row, rowIndex) => (
                                     <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                                         <td className="py-4 px-6 font-medium text-gray-900">{row.feature}</td>
@@ -241,38 +211,7 @@ export default function CoachingPackages() {
             </section>
 
             {/* Final CTA */}
-            <section className="relative py-16 md:py-24 bg-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="bg-gradient-to-br from-[#F5F9FF] to-[#FFF0F0] rounded-2xl p-8 md:p-12 shadow-lg border border-[#00337C]/20"
-                    >
-                        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">Ready to Begin Your Transformation?</h2>
-                        <p className="text-xl text-gray-600 mb-8">
-                            Still unsure which option is right for you? Let's chat about your goals.
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-6">
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="px-8 py-4 bg-gradient-to-r from-[#00337C] to-[#1E4B9E] hover:from-[#1E4B9E] hover:to-[#00337C] text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-                            >
-                                Start Your Journey
-                            </motion.button>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="px-8 py-4 border-2 border-[#00337C] text-[#00337C] hover:bg-[#00337C]/10 rounded-xl font-bold text-lg transition-all duration-300"
-                            >
-                                Common Questions
-                            </motion.button>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+            
         </div>
     );
 }

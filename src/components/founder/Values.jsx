@@ -92,9 +92,7 @@ export default function CoreValues() {
               <div className="mt-6 pt-6 border-t border-gray-200 group-hover:border-[#B76E79]/30 transition-colors duration-300">
                 <div className="flex items-center text-gray-500 group-hover:text-[#00337C] transition-colors duration-300">
                   <span className="text-sm">Why this matters</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  
                 </div>
               </div>
             </motion.div>

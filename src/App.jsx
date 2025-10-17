@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Navbar from './layouts/Navbar'
 import Footer from './layouts/Footer'
-import MeetBrenda from './pages/Founder'
 import ProductsComponent from './pages/Shop'
 import About from './pages/About'
 import CoachingPackages from './pages/Coaching'
@@ -23,6 +22,10 @@ import TermsAndConditions from './pages/Terms'
 import WhatsAppFloat from './components/FloatingWA'
 import PaymentSuccess from './pages/Successpage'
 import Founder from './pages/Founder'
+import CoachingCheckout from './pages/Cart2'
+import ResumeCart from './pages/ResumeCart'
+import CvInterviewPrep from './pages/services/Resume'
+
 
 
 
@@ -54,6 +57,10 @@ export default function Router() {
         <Route path="/privacy" element={<PrivacyPolicy/>}/>
         <Route path="/terms" element={<TermsAndConditions/>}/>
         <Route path="/payment-success" element={<PaymentSuccess/>}/>
+        <Route path="/checkout" element={<CoachingCheckout/>}/>
+        <Route path="/resume" element={<CvInterviewPrep/>}/>
+        <Route path="/resume-cart" element={<ResumeCart />} />
+      
 
         
         
