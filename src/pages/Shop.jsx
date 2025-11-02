@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ShopHero from "./shop/ShopHero";
+
 import ShopTabs from "./shop/ShopTabs";
 import EbookSection from "./shop/Ebooks";
 import Merch from "./shop/Merch";
@@ -16,7 +16,7 @@ export default function Shop() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <ShopHero />
+
 
       {/* Tabs */}
       {!selectedProduct && (

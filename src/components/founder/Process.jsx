@@ -4,26 +4,26 @@ export default function OurApproach() {
   const approaches = [
     {
       number: "01",
-      title: "Mindset Transformation",
-      description: "We provide practical, no-fluff tools to fundamentally shift how you think about yourself and your potential.",
+      title: "Awakening Possibility",
+      description: "This is the stage of awakening. It’s where individuals begin to see themselves and their potential through new eyes.",
       color: "from-[#00337C] to-[#1E4B9E]"
     },
     {
       number: "02",
-      title: "Multi-Format Guidance",
-      description: "Through personalized coaching, digital resources, and self-paced challenges, we meet you where you are.",
+      title: "Restoring Wholeness",
+      description: "Before growth can flourish, healing must happen. At BYBS, we understand that many people carry emotional wounds, limiting beliefs, or unprocessed experiences that silently shape their choices and confidence.",
       color: "from-[#B76E79] to-[#D4A5AD]"
     },
     {
       number: "03",
-      title: "Intentional Growth Framework",
-      description: "Our structured approach helps you grow with purpose in both personal and professional realms.",
+      title: "Living with Intention",
+      description: "This is where transformation becomes visible. The Evolve stage helps individuals turn clarity and healing into intentional action. ",
       color: "from-[#00337C] to-[#3A6CB5]"
     },
     {
       number: "04",
-      title: "Alignment Coaching",
-      description: "We specialize in helping you make decisions that resonate with your true self across all life areas.",
+      title: "Aligned Decision-Making",
+      description: "With a strong foundation of self-awareness and healed wounds, individuals are empowered to make decisions that align with their true selves and long-term vision.",
       color: "from-[#B76E79] to-[#E5C1C6]"
     }
   ];

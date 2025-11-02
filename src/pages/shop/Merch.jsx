@@ -1,17 +1,58 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
-import merchData from "./MerchData"; 
+import { useNavigate } from "react-router-dom";
+import { ShoppingCart } from "lucide-react";
+import merchData from "./MerchData";
 
-const Merch = ({ onViewDetails }) => {
+const Merch = () => {
   const navigate = useNavigate();
+  const [cart, setCart] = useState([]);
 
-  const handleViewDetails = (product) => {
-    navigate(`/merch/${product.id}`);
+  // Load cart from localStorage when page loads
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(savedCart);
+  }, []);
+
+  // Save cart to localStorage when updated
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  // ✅ Add to cart function
+  const handleAddToCart = (product) => {
+    const existingItem = cart.find((item) => item.id === product.id);
+
+    if (existingItem) {
+      alert("Item already in cart.");
+      return;
+    }
+
+    const updatedCart = [...cart, { ...product, quantity: 1 }];
+    setCart(updatedCart);
+  
+  };
+
+  // ✅ Navigate to checkout
+  const handleOpenCart = () => {
+    navigate("/merchcheckout");
   };
 
   return (
-    <section className="py-5 bg-white">
+    <section className="py-5 bg-white relative">
+      {/* Floating Cart Icon */}
+      <button
+        onClick={handleOpenCart}
+        className="fixed top-25 right-6 bg-[#00337C] text-white p-3 rounded-full shadow-lg hover:bg-[#1E4B9E] transition-all z-50"
+      >
+        <ShoppingCart size={22} />
+        {cart.length > 0 && (
+          <span className="absolute -top-1 -right-1 bg-[#B76E79] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            {cart.length}
+          </span>
+        )}
+      </button>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -41,7 +82,7 @@ const Merch = ({ onViewDetails }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group relative bg-white border border-gray-100 hover:border-[#00337C]/20 transition-all duration-300 flex flex-col h-full overflow-hidden  shadow-sm"
+              className="group relative bg-white border border-gray-100 hover:border-[#00337C]/20 transition-all duration-300 flex flex-col h-full overflow-hidden shadow-sm"
             >
               {/* Bestseller Badge */}
               {item.isBestseller && (
@@ -53,87 +94,39 @@ const Merch = ({ onViewDetails }) => {
               )}
 
               {/* Image */}
-              <div
-                onClick={() => handleViewDetails(item)}
-                className="cursor-pointer relative bg-gray-50 p-2 max-h-[250px] flex items-center justify-center"
-              >
+              <div className="relative bg-gray-50 p-4 max-h-[250px] flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="max-h-full w-full object-contain transition-all duration-500 group-hover:scale-110"
+                  className="max-h-full w-full object-contain transition-all duration-500 group-hover:scale-105"
                 />
               </div>
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-grow border-t border-gray-100">
                 <div className="flex-grow mb-4">
-                  <h3
-                    onClick={() => handleViewDetails(item)}
-                    className="text-xl font-normal text-[#00337C] mb-2 leading-tight tracking-tight hover:text-[#1E4B9E] cursor-pointer"
-                  >
+                  <h3 className="text-xl font-normal text-[#00337C] mb-2 leading-tight tracking-tight">
                     {item.name}
                   </h3>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-light text-[#B76E79]">
-                      ${item.price.toFixed(2)}
-                    </span>
-                    <span className="text-xs text-gray-500 uppercase tracking-wide">
-                      {item.category === "hoodie"
-                        ? "Premium Hoodie"
-                        : item.category === "tshirt"
-                        ? "Classic Tee"
-                        : item.category === "journal"
-                        ? "Journal"
-                        : "Accessory"}
-                    </span>
-                  </div>
                   <p className="text-sm text-gray-600 mt-2 line-clamp-2">
                     {item.description}
                   </p>
+                  <span className="text-2xl font-light text-[#B76E79] mt-3 block">
+                    ${item.price.toFixed(2)}
+                  </span>
                 </div>
 
-                {/* Buttons */}
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => onViewDetails(item)}
-                    className="flex-1 px-4 py-3 text-sm font-medium bg-[#00337C] hover:bg-[#1E4B9E] text-white transition-all duration-200 text-center"
-                  >
-                    View Details
-                  </button>
-                  <button
-                    onClick={() => onViewDetails(item)}
-                    className="px-4 py-3 text-sm font-medium border border-[#00337C] text-[#00337C] hover:bg-[#00337C] hover:text-white transition-all duration-200 text-center"
-                  >
-                    Buy Now
-                  </button>
-                </div>
+                {/* ✅ Single Add to Cart Button */}
+                <button
+                  onClick={() => handleAddToCart(item)}
+                  className="w-full px-4 py-3 text-sm font-medium bg-[#00337C] hover:bg-[#1E4B9E] text-white transition-all duration-200 text-center"
+                >
+                  Add to Cart
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Additional Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-16 pt-8 border-t border-gray-100"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-600">
-            <div>
-              <h4 className="font-medium text-[#00337C] mb-2">Free Shipping</h4>
-              <p>On all orders over $75</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-[#00337C] mb-2">30-Day Returns</h4>
-              <p>Hassle-free guarantee</p>
-            </div>
-            <div>
-              <h4 className="font-medium text-[#00337C] mb-2">Ethically Made</h4>
-              <p>Supporting women-owned businesses</p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

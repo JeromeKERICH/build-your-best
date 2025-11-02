@@ -3,8 +3,9 @@ import { useEffect } from 'react'
 import Hero from '../components/Hero'
 import AboutSection from '../components/About'
 import ServicesProducts from '../components/Services'
-import CTASection from '../components/CTA'
 import FellowshipPopup from '../layouts/Fellowship'
+import WhoWeServe from '../components/Who'
+import Testimonials from '../components/Testimonials'
 
 const Home = () => {
   useEffect(() => {
@@ -15,8 +16,9 @@ const Home = () => {
       <FellowshipPopup/>
       <Hero/>
       <AboutSection/>
+      <WhoWeServe/>
       <ServicesProducts/>
-      <CTASection/>
+      <Testimonials/>
     </div>
   )
 }

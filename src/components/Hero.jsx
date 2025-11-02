@@ -32,7 +32,7 @@ export default function Hero() {
         </>
       )}
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text Content - HIGH IMPACT */}
           <motion.div 
@@ -48,21 +48,21 @@ export default function Hero() {
                 transition={{ delay: 0.4 }}
                 className="inline-block px-4 py-2 bg-[#C66D02]/20 rounded-full mb-6 border border-[#C66D02]/50"
               >
-                <span className="text-[#FF9E3B] font-bold text-sm tracking-widest">NEW GENERATION COACHING</span>
+                <span className="text-[#FF9E3B] font-bold text-sm tracking-widest ">INSPIRE, HEAL,EVOLVE</span>
               </motion.div>
               
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-8">
-                <span className="text-white">Unlock Your </span>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A7CFF] to-[#FF9E3B]">Brilliance</span>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-8">
+                <span className="text-white">Before you build a life you’re proud of, </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A7CFF] to-[#FF9E3B]">You must first build yourself. </span>
               </h1>
               
               <motion.p
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-l md:text-xl text-white/80 mb-10 max-w-lg font-medium"
+                className="text-l md:text-xl text-white/80 mb-10 max-w-lg font-light"
               >
-                Transform your mindset with our <span className="text-[#FF9E3B] font-semibold">proven framework</span> that has helped thousands achieve extraordinary results.
+                We guide women and youth on a journey of<span className="text-[#FF9E3B] font-semibold"> self-awareness, healing, and intentional growth</span> so they can live, lead, and create from a place of inner wholeness.
               </motion.p>
             </div>
             

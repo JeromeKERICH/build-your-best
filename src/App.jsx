@@ -20,11 +20,13 @@ import FAQPage from './pages/Faqs'
 import PrivacyPolicy from './pages/Privacy-Policy'
 import TermsAndConditions from './pages/Terms'
 import WhatsAppFloat from './components/FloatingWA'
-import PaymentSuccess from './pages/Successpage'
 import Founder from './pages/Founder'
-import CoachingCheckout from './pages/Cart2'
 import ResumeCart from './pages/ResumeCart'
 import CvInterviewPrep from './pages/services/Resume'
+import PaymentSuccess from './pages/shop/PaymentSuccess'
+import MerchCheckout from './pages/shop/MerchCheckout'
+import MerchSuccess from './pages/MerchSuccess'
+import CoachingSuccess from './pages/CoachingSuccess'
 
 
 
@@ -56,10 +58,13 @@ export default function Router() {
         <Route path="faqs" element={<FAQPage/>}/>
         <Route path="/privacy" element={<PrivacyPolicy/>}/>
         <Route path="/terms" element={<TermsAndConditions/>}/>
-        <Route path="/payment-success" element={<PaymentSuccess/>}/>
-        <Route path="/checkout" element={<CoachingCheckout/>}/>
+        <Route path="/payment-success" element={<PaymentSuccess />} />
         <Route path="/resume" element={<CvInterviewPrep/>}/>
         <Route path="/resume-cart" element={<ResumeCart />} />
+        <Route path="/merchcheckout" element={<MerchCheckout/>}/>
+        <Route path="/merch/success" element={<MerchSuccess />} />
+        <Route path="/coaching-success" element={<CoachingSuccess/>}/>
+
       
 
         

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import CheckoutPage from "./CheckoutPage";
 
 export default function EbookSection() {
   useEffect(() => {
@@ -13,7 +14,7 @@ export default function EbookSection() {
   // EBOOKS DATA
   const products = [
     {
-      id: 1,
+      id: "6712abcf123456789",
       name: "Boundaries and Balance",
       category: "boundaries",
       file: "Boundaries & Balance.pdf",
@@ -21,11 +22,10 @@ export default function EbookSection() {
       price: 18,
       isBestseller: true,
       image: "/assets/bon.jpg",
-      description:
-        "Learn to set healthy limits and create equilibrium in your life",
+      description: "Learn to set healthy limits and create equilibrium in your life",
     },
     {
-      id: 2,
+      id: "6712abcf987654321",
       name: "5-Day Discovery Challenge",
       category: "healing",
       file: "Discovery Challenge.pdf",
@@ -33,11 +33,10 @@ export default function EbookSection() {
       price: 15,
       isBestseller: true,
       image: "/assets/5-d.jpg",
-      description:
-        "Embrace the non-linear journey of personal discovery and transformation",
+      description: "Embrace the non-linear journey of personal discovery and transformation",
     },
     {
-      id: 3,
+      id: "6712abcfa1234",
       name: "Reclaim Your Power",
       category: "empowerment",
       file: "RECLAIM YOUR POWER.pdf",
@@ -45,11 +44,10 @@ export default function EbookSection() {
       price: 20,
       isBestseller: true,
       image: "/assets/rec.jpg",
-      description:
-        "Rediscover your inner strength and step into your authentic power",
+      description: "Rediscover your inner strength and step into your authentic power",
     },
     {
-      id: 4,
+      id: "6712abcfb9876",
       name: "The Self-Awareness Guide",
       category: "awareness",
       file: "Self Awareness.pdf",
@@ -57,8 +55,7 @@ export default function EbookSection() {
       price: 0,
       isBestseller: false,
       image: "/assets/aware.jpg",
-      description:
-        "Develop deeper self-knowledge and emotional intelligence",
+      description: "Develop deeper self-knowledge and emotional intelligence",
     },
   ];
 
@@ -71,12 +68,33 @@ export default function EbookSection() {
     setShowCheckout(true);
   };
 
+  // Render checkout page when product is selected
   if (showCheckout && selectedProduct) {
     return <CheckoutPage selectedProduct={selectedProduct} />;
   }
 
   return (
-    <div className="min-h-screen bg-white py-5">
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-light text-[#00337C] mb-6 tracking-tight"
+          >
+            Personal Growth Guides
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed"
+          >
+            Transformative resources to guide your journey of self-discovery and empowerment
+          </motion.p>
+        </div>
+      </section>
 
       {/* Products Grid */}
       <section className="pb-20 bg-white">
@@ -88,7 +106,7 @@ export default function EbookSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -4 }}
+                whileHover={{ y: -8 }}
                 className="group relative bg-white rounded-none border border-gray-100 hover:border-[#00337C]/20 transition-all duration-300 flex flex-col h-full overflow-hidden"
               >
                 {/* Bestseller Badge */}
@@ -100,22 +118,22 @@ export default function EbookSection() {
                   </div>
                 )}
 
-                {/* Image Container */}
-                <div className="relative bg-gray-50 p-8 min-h-[250px] flex items-center justify-center">
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className={`max-h-[400px] w-auto object-contain transition-all duration-500 group-hover:scale-105 ${
-                        loadedImages[product.id] ? "opacity-100" : "opacity-0"
-                      }`}
-                      onLoad={() => handleImageLoad(product.id)}
-                    />
-                    {!loadedImages[product.id] && (
-                      <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
-                    )}
+                {/* Image Container - Alternative: contain instead of cover */}
+                  <div className="relative bg-gray-50 min-h-[120px] flex items-center justify-center overflow-hidden">
+                    <div className="relative w-full h-full flex items-center justify-center p-4">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className={`max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-105 ${
+                          loadedImages[product.id] ? "opacity-100" : "opacity-0"
+                        }`}
+                        onLoad={() => handleImageLoad(product.id)}
+                      />
+                      {!loadedImages[product.id] && (
+                        <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
+                      )}
+                    </div>
                   </div>
-                </div>
                 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow border-t border-gray-100">
@@ -142,7 +160,7 @@ export default function EbookSection() {
                           : "bg-[#00337C] hover:bg-[#1E4B9E] text-white"
                       }`}
                     >
-                      {product.price === 0 ? "Download" : "Get Guide"}
+                      {product.price === 0 ? "Download Free" : "Get Guide"}
                     </button>
                   </div>
                 </div>
@@ -154,4 +172,3 @@ export default function EbookSection() {
     </div>
   );
 }
-

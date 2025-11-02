@@ -1,77 +1,95 @@
-import { motion } from 'framer-motion';
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-export default function AboutSection() {
+const AboutSection = () => {
   return (
-    <section className="relative bg-white py-5 md:py-10 overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-[#F7D9D9] opacity-20 mix-blend-multiply filter blur-3xl -translate-x-1/3 -translate-y-1/3"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-[#00337C] opacity-10 mix-blend-multiply filter blur-3xl translate-x-1/3 translate-y-1/3"></div>
-
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#00337C] mb-6">
-            Our Purpose
-          </h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Vision */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-[#F5F9FF] to-[#FFF0F0] rounded-2xl p-8 shadow-lg border border-[#00337C]/20"
-            >
-              <h3 className="text-2xl font-bold text-[#B76E79] mb-4">Our Vision</h3>
-              <p className="text-lg text-gray-700">
-                To see a generation of women living in full alignment with who they are healed, confident, 
-                and creating impact from a place of inner wholeness.
-              </p>
-            </motion.div>
-
-            {/* Mission */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="bg-gradient-to-br from-[#FFF0F0] to-[#F5F9FF] rounded-2xl p-8 shadow-lg border border-[#B76E79]/20"
-            >
-              <h3 className="text-2xl font-bold text-[#00337C] mb-4">Our Mission</h3>
-              <p className="text-lg text-gray-700">
-                To empower women to reconnect with their identity, shift their mindset, and grow with intention, so they 
-                can build a life and career that aligns with who they truly are.
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center mt-12"
-        >
-          <Link 
-            to="/founder" 
-            className="px-8 py-3 bg-[#00337C] hover:bg-[#1E4B9E] text-white rounded-lg font-medium transition-colors duration-300 text-center"
+    <section className="min-h-screen bg-white py-5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Content Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
           >
-            Meet Our Founder
-          </Link>
-          <Link 
-            to="/about" 
-            className="px-8 py-3 border-2 border-[#00337C] text-[#00337C] hover:bg-[#00337C]/10 rounded-lg font-medium transition-colors duration-300 text-center"
+            <div>
+              <h1 className="text-4xl md:text-5xl font-light text-[#00337C] mb-8 leading-tight">
+                About Us
+              </h1>
+              <div className="w-20 h-1 bg-[#B76E79] mb-8"></div>
+            </div>
+
+            <p className="text-lg text-gray-700 font-light leading-relaxed">
+              BYBS is a personal and professional development movement that helps women and youth 
+              <span className="font-medium text-[#00337C]"> reconnect with who they are</span>, 
+              <span className="font-medium text-[#00337C]"> heal what holds them back</span>, and 
+              <span className="font-medium text-[#00337C]"> grow into the best version of themselves</span> , from the inside out.
+            </p>
+
+            <div className="space-y-2">
+              <p className="text-gray-600 leading-relaxed">
+                We believe true success comes from wholeness. That's why we don't just teach people how to succeed, 
+                we help them become whole first, then build from there.
+              </p>
+              <a href="/our-story" className="text-[#00337C] font-medium underline">Click here to Download Our Guide</a>
+              
+              
+            </div>
+
+            {/* Values */}
+            <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 pt-3 md:pt-6">
+              <div className="text-center">
+                <div className="w-8 h-8 bg-[#00337C] rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-white font-semibold">1</span>
+                </div>
+                <h3 className="font-medium text-[#00337C] mb-2">Inspire</h3>
+               
+              </div>
+              
+              <div className="text-center">
+                <div className="w-8 h-8 bg-[#00337C] rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-white font-semibold">2</span>
+                </div>
+                <h3 className="font-medium text-[#00337C] mb-2">Heal</h3>
+                
+              </div>
+              
+              <div className="text-center">
+                <div className="w-8 h-8 bg-[#00337C] rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-white font-semibold">3</span>
+                </div>
+                <h3 className="font-medium text-[#00337C] mb-2">Evolve</h3>
+                
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Image Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
           >
-            Our Approach
-          </Link>
-        </motion.div>
+            <div className="aspect-square bg-white rounded-none overflow-hidden">
+              {/* Replace with your actual image */}
+              <img
+                src="/assets/abt.jpg" // Add your image path here
+                alt="Build Your Best Self - Personal Growth Journey"
+                className="w-full h-[500px] object-cover"
+              />
+              
+             
+            </div>
+            
+            
+          </motion.div>
+        </div>
+
+        
       </div>
     </section>
   );
-}
+};
+
+export default AboutSection;
